@@ -13,8 +13,8 @@
   </head>
 
   <body>
-############All PHP SCRIP should be here###########
-#<?php
+<!--All PHP SCRIP should be here########### -->
+<?php
 #function TA-CGNAT-CONSUMER()
 #{
 #echo "http://google.com";
@@ -23,7 +23,7 @@
 #{
 #exec('python /var/www/html/test.py');
 #}
-#?>
+?>
 
 
 
