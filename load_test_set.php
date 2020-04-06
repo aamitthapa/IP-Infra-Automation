@@ -173,28 +173,14 @@ exec('python /var/www/html/test.py');
 
   <div class="container">
     <div class="jumbotron">
-     <h1><button>CGNAT_CONSUMER</button></h1>
-<!--	<iframe width="500" height="400" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=E3CA2FF309260AE9%21110&authkey=%21AN__ZAF8rbnISho&em=2&wdAllowInteractivity=False&wdHideGridlines=True&wdHide
-Headers=True&wdDownloadButton=True&wdInConfigurator=True"></iframe>
---> </div>
-    </div>
+     <h3><button>CGNAT_CONSUMER</button></h3>
+     <h3><button>CGNAT_RESELLER</button></h3>
+     <h3><button>NGINX_LB</button></h3>
+     <h3><button>OAM_FW</button></h3>
+   </div>
 
 
-
-  <!-- OTHER STUFF ON THE PAGE -->
-
-  <div class="container">
-    <div class="jumbotron">
-     <center>
-     <h1>IP-INFRA AUTOMATION TOOL</h1>
-<!--	<iframe width="500" height="400" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=E3CA2FF309260AE9%21110&authkey=%21AN__ZAF8rbnISho&em=2&wdAllowInteractivity=False&wdHideGridlines=True&wdHide
-Headers=True&wdDownloadButton=True&wdInConfigurator=True"></iframe>
---> </center>
-    </div>
-    </div>
-  <!-- Need to have JQuery and Javascript for DropDown Actions to work -->
-
-
+  </div>
 
 
 </body>
