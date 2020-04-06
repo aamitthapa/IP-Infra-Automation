@@ -79,7 +79,7 @@
                   <li><a href="cloud7-vnfs.html">RDM52B</a></li>
                   <li><a href="cloud8-vnfs.html">RDM52C</a></li>
                   <li><a href="cloud8-vnfs.html">RDM52D</a></li>
-                  <li><a href="cloud8-vnfs.html">RDM52E</a></li>            
+                  <li><a href="cloud8-vnfs.html">RDM52E</a></li>
             </ul>
 
           <li class="dropdown">
@@ -92,6 +92,13 @@
                   <li><a href="cloud8-vnfs.html">RDM52E</a></li>
             </ul>
 
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                    <li><a href="cloud6-vnfs.html">Create or Modify Test Set</a></li>
+                    <li><a href="cloud7-vnfs.html">Add or Modify DUT</a></li>
+                    <li><a href="cloud8-vnfs.html">Add of Modify APN</a></li>
+              </ul>
       <!-- ####################Clouds drop down starts here################### -->
 
   <!-- ############################################ -->
@@ -148,11 +155,11 @@
 
   <div class="container">
     <div class="jumbotron">
-     <center> 
+     <center>
      <h1>IP-INFRA AUTOMATION TOOL</h1>
 <!--	<iframe width="500" height="400" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=E3CA2FF309260AE9%21110&authkey=%21AN__ZAF8rbnISho&em=2&wdAllowInteractivity=False&wdHideGridlines=True&wdHide
 Headers=True&wdDownloadButton=True&wdInConfigurator=True"></iframe>
---> 
+-->
   </center>
   </div>
 
