@@ -17,7 +17,7 @@
 <?php
 function Load_Test_Set()
 {
-  echo "http://google.com";
+  echo "load_test_set.php";
 }
 function TA_CGNAT_CONSUMER()
 {
