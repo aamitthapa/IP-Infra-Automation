@@ -111,9 +111,9 @@ exec('python /var/www/html/test.py');
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                    <li><a href="cloud6-vnfs.html">Create or Modify Test Set</a></li>
+                    <li><a href="cloud6-vnfs.html">Add or Modify Test Library</a></li>
                     <li><a href="cloud7-vnfs.html">Add or Modify DUT</a></li>
-                    <li><a href="cloud8-vnfs.html">Add of Modify APN</a></li>
+                    <li><a href="cloud8-vnfs.html">Add or Modify APN</a></li>
               </ul>
       <!-- ####################Clouds drop down starts here################### -->
 
