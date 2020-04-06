@@ -14,16 +14,16 @@
 
   <body>
 ############All PHP SCRIP should be here###########
-<?php
-function TA-CGNAT-CONSUMER()
-{
-echo "http://google.com";
-}
-function TA-CGNAT-CONSUMER()
-{
-exec('python /var/www/html/test.py');
-}
-?>
+#<?php
+#function TA-CGNAT-CONSUMER()
+#{
+#echo "http://google.com";
+#}
+#function TA-CGNAT-CONSUMER()
+#{
+#exec('python /var/www/html/test.py');
+#}
+#?>
 
 
 
