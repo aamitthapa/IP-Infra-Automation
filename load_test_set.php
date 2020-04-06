@@ -17,7 +17,7 @@
 <?php
 function Load_Test_Set()
 {
-  echo "http://google.com";
+  echo "load_test_set.php";
 }
 function TA_CGNAT_CONSUMER()
 {
@@ -70,14 +70,86 @@ exec('python /var/www/html/test.py');
           <li><a href="#">Cloud VNFs</a></li> -->
       <!-- ####################Dashboards drop down starts here################### -->
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Load Test Set<span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Test Automation <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href='<?php TA_CGNAT_RESELLER(); ?>'>CGNAT-RESELLER</a></li>
-              <li><a href='<?php TA_CGNAT_CONSUMER(); ?>'>CGNAT-CONSUMER</a></li>
+              <li><a href='<?php Load_Test_Set(); ?>'>Load Test Set</a></li>
+<!--              <li><a href='<?php TA_CGNAT_RESELLER(); ?>'>CGNAT-RESELLER</a></li>
               <li><a href='<?php TA_NGINX_LB(); ?>'>NGINX-LB</a></li>
               <li><a href='<?php TA_OAM_FW(); ?>'>OAM-FW</a></li>
-            </ul>
+-->          </ul>
+
+
+            <!-- ####################Dashboards drop down stops here################### -->
+
+
+      <!-- ####################VNFss drop down starts here################### -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Traffic Generator <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href='<?php TA_CGNAT_CONSUMER(); ?>'>CGNAT-CONSUMER</a></li>
+              <li><a href='<?php TA_CGNAT_RESELLER(); ?>'>CGNAT-RESELLER</a></li>
+              <li><a href='<?php TA_NGINX_LB(); ?>'>NGINX-LB</a></li>
+              <li><a href='<?php TA_OAM_FW(); ?>'>OAM-FW</a></li>
+          </ul>
+
       <!-- ####################VNFs drop down stops here################### -->
+
+            <!-- ####################Clouds drop down starts here################### -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Packet Capture <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href='<?php TA_CGNAT_CONSUMER(); ?>'>CGNAT-CONSUMER</a></li>
+              <li><a href='<?php TA_CGNAT_RESELLER(); ?>'>CGNAT-RESELLER</a></li>
+              <li><a href='<?php TA_NGINX_LB(); ?>'>NGINX-LB</a></li>
+              <li><a href='<?php TA_OAM_FW(); ?>'>OAM-FW</a></li>
+          </ul>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CLI Executer<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href='<?php TA_CGNAT_CONSUMER(); ?>'>CGNAT-CONSUMER</a></li>
+              <li><a href='<?php TA_CGNAT_RESELLER(); ?>'>CGNAT-RESELLER</a></li>
+              <li><a href='<?php TA_NGINX_LB(); ?>'>NGINX-LB</a></li>
+              <li><a href='<?php TA_OAM_FW(); ?>'>OAM-FW</a></li>
+          </ul>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                    <li><a href="cloud6-vnfs.html">Add or Modify Test Library</a></li>
+                    <li><a href="cloud7-vnfs.html">Add or Modify DUT</a></li>
+                    <li><a href="cloud8-vnfs.html">Add or Modify APN</a></li>
+              </ul>
+      <!-- ####################Clouds drop down starts here################### -->
+
+  <!-- ############################################ -->
+<!--          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Server ILOs <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="cloud6-ilo.html">Cloud6</a></li>
+              <li><a href="cloud7-ilo.html">Cloud7</a></li>
+              <li><a href="cloud8-ilo.html">Cloud8</a></li>
+            </ul>
+-->
+              <!-- Use this to separate a new link -->
+  <!-- ############################################ -->
+
+
+  <!-- ####################VNFss drop down starts here################### -->
+      <!-- <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Router/Switches <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+              <li><a href="ss.html">Spine Switch</a></li>
+              <li><a href="ls1.html">Leaf Switch11</a></li>
+              <li><a href="ls2.html">Leaf Switch12</a></li>
+        </ul> -->
+  <!-- ####################VNFs drop down stops here################### -->
+<!--  <li class="nav navbar-nav"><a href="router-switch.html">Router/Switches</a></li>
+  <li class="nav navbar-nav"><a href="kvm.html">KVMs</a></li>
+-->
+            <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
+          <!-- ############################################ -->
+
+
   </ul>
 
         <!-- SEARCH BAR -->
@@ -99,6 +171,16 @@ exec('python /var/www/html/test.py');
   </nav>
 
 
+  <div class="container">
+    <div class="jumbotron">
+     <h1><button>CGNAT_CONSUMER</button></h1>
+<!--	<iframe width="500" height="400" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=E3CA2FF309260AE9%21110&authkey=%21AN__ZAF8rbnISho&em=2&wdAllowInteractivity=False&wdHideGridlines=True&wdHide
+Headers=True&wdDownloadButton=True&wdInConfigurator=True"></iframe>
+--> </div>
+    </div>
+
+
+
   <!-- OTHER STUFF ON THE PAGE -->
 
   <div class="container">
@@ -107,11 +189,9 @@ exec('python /var/www/html/test.py');
      <h1>IP-INFRA AUTOMATION TOOL</h1>
 <!--	<iframe width="500" height="400" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=E3CA2FF309260AE9%21110&authkey=%21AN__ZAF8rbnISho&em=2&wdAllowInteractivity=False&wdHideGridlines=True&wdHide
 Headers=True&wdDownloadButton=True&wdInConfigurator=True"></iframe>
--->
-  </center>
-  </div>
-
-  </div>
+--> </center>
+    </div>
+    </div>
   <!-- Need to have JQuery and Javascript for DropDown Actions to work -->
 
 
