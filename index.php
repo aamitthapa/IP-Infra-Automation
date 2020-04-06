@@ -15,6 +15,10 @@
   <body>
 <!--All PHP SCRIP should be here########### -->
 <?php
+function Load_Test_Set()
+{
+  echo "http://google.com";
+}
 function TA_CGNAT_CONSUMER()
 {
 echo "http://google.com";
@@ -68,11 +72,11 @@ exec('python /var/www/html/test.py');
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Test Automation <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href='<?php TA_CGNAT_CONSUMER(); ?>'>CGNAT-CONSUMER</a></li>
-              <li><a href='<?php TA_CGNAT_RESELLER(); ?>'>CGNAT-RESELLER</a></li>
+              <li><a href='<?php Load_Test_Set(); ?>'>Load Test Set</a></li>
+<!--              <li><a href='<?php TA_CGNAT_RESELLER(); ?>'>CGNAT-RESELLER</a></li>
               <li><a href='<?php TA_NGINX_LB(); ?>'>NGINX-LB</a></li>
               <li><a href='<?php TA_OAM_FW(); ?>'>OAM-FW</a></li>
-          </ul>
+-->          </ul>
 
 
             <!-- ####################Dashboards drop down stops here################### -->
