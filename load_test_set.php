@@ -59,7 +59,7 @@ exec('python /var/www/html/test.py');
           <span class="icon-bar"></span>
         </button>
 
-        <a class="navbar-brand" href="index.html">Home</a>
+        <a class="navbar-brand" href="index.php">Home</a>
       </div>
 
       <!-- Anything inside of collapse navbar-collapse goes into the "hamburger" -->
