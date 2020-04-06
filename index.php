@@ -47,11 +47,13 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Test Automation <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="http://openstack-cl6.techmlab.com" target="_blank">RDM52A</a></li>
-              <li><a href="http://openstack-cl7.techmlab.com" target="_blank">RDM52B</a></li>
-              <li><a href="#" target="_blank">RDM52C</a></li>
-              <li><a href="http://openstack-cl9.techmlab.com" target="_blank">RDM52D</a></li>
-	      <li><a href="https://openstack-cl9.techmlab.com:8143" target="_blank">RDM52E</a></li>
+              <form method="post"><p>
+              <li><button name="CGNAT-CONSUMER">CGNAT-CONSUMER</button></li>
+              <li><button name="CGNAT-RESELLER">CGNAT-RESELLER</button></li>
+              <li><button name="NGINX-LB">NGINX-LB</button></li>
+              <li><button name="OAM-FW">OAM-FW</button></li>
+              <li><button name="COR-SGI-FW">COR-SGI-FW</button></li>
+              </p></form>
           </ul>
 
 
