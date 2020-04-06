@@ -13,6 +13,19 @@
   </head>
 
   <body>
+############All PHP SCRIP should be here###########
+<?php
+function TA-CGNAT-CONSUMER()
+{
+echo "http://google.com";
+}
+function TA-CGNAT-CONSUMER()
+{
+exec('python /var/www/html/test.py');
+}
+?>
+
+
 
   	<!-- DOCUMENTATION NAVBAR -->
 
@@ -48,8 +61,8 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Test Automation <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <form method="post"><p>
-              <li><button name="CGNAT-CONSUMER">CGNAT-CONSUMER</button></li>
-              <li><button name="CGNAT-RESELLER">CGNAT-RESELLER</button></li>
+              <li><a href='<?php TA-CGNAT-CONSUMER(); ?>'>CGNAT-CONSUMER</a></li>
+              <li><a href='<?php TA-CGNAT-CONSUMER(); ?>'>CGNAT-RESELLER</a></li>
               <li><button name="NGINX-LB">NGINX-LB</button></li>
               <li><button name="OAM-FW">OAM-FW</button></li>
               <li><button name="COR-SGI-FW">COR-SGI-FW</button></li>
