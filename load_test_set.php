@@ -70,7 +70,7 @@ exec('python /var/www/html/test.py');
           <li><a href="#">Cloud VNFs</a></li> -->
       <!-- ####################Dashboards drop down starts here################### -->
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Test Automation <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Load Test Set<span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href='<?php TA_CGNAT_RESELLER(); ?>'>CGNAT-RESELLER</a></li>
               <li><a href='<?php TA_CGNAT_CONSUMER(); ?>'>CGNAT-CONSUMER</a></li>
