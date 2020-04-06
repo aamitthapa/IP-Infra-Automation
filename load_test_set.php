@@ -74,10 +74,9 @@ exec('python /var/www/html/test.py');
             <ul class="dropdown-menu">
               <li><a href='<?php TA_CGNAT_RESELLER(); ?>'>CGNAT-RESELLER</a></li>
               <li><a href='<?php TA_CGNAT_CONSUMER(); ?>'>CGNAT-CONSUMER</a></li>
-              <li><a href='<?php TA_CGNAT_RESELLER(); ?>'>CGNAT-RESELLER</a></li>
               <li><a href='<?php TA_NGINX_LB(); ?>'>NGINX-LB</a></li>
               <li><a href='<?php TA_OAM_FW(); ?>'>OAM-FW</a></li>
--->          </ul>
+            </ul>
       <!-- ####################VNFs drop down stops here################### -->
   </ul>
 
