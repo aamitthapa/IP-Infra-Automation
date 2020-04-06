@@ -23,6 +23,14 @@ function TA_CGNAT_RESELLER()
 {
 exec('python /var/www/html/test.py');
 }
+function TA_NGINX_LB()
+{
+exec('python /var/www/html/test.py');
+}
+function TA_OAM_FW()
+{
+exec('python /var/www/html/test.py');
+}
 ?>
 
 
@@ -62,9 +70,8 @@ exec('python /var/www/html/test.py');
             <ul class="dropdown-menu">
               <li><a href='<?php TA_CGNAT_CONSUMER(); ?>'>CGNAT-CONSUMER</a></li>
               <li><a href='<?php TA_CGNAT_RESELLER(); ?>'>CGNAT-RESELLER</a></li>
-              <li><button name="NGINX-LB">NGINX-LB</button></li>
-              <li><button name="OAM-FW">OAM-FW</button></li>
-              <li><button name="COR-SGI-FW">COR-SGI-FW</button></li>
+              <li><a href='<?php TA_NGINX_LB(); ?>'>NGINX-LB</a></li>
+              <li><a href='<?php TA_OAM_FW(); ?>'>OAM-FW</a></li>
           </ul>
 
 
@@ -75,12 +82,11 @@ exec('python /var/www/html/test.py');
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Traffic Generator <span class="caret"></span></a>
             <ul class="dropdown-menu">
-                  <li><a href="cloud6-vnfs.html">RDM52A</a></li>
-                  <li><a href="cloud7-vnfs.html">RDM52B</a></li>
-                  <li><a href="cloud8-vnfs.html">RDM52C</a></li>
-            	  <li><a href="cloud8-vnfs.html">RDM52D</a></li>
-                  <li><a href="cloud8-vnfs.html">RDM52E</a></li>
-	</ul>
+              <li><a href='<?php TA_CGNAT_CONSUMER(); ?>'>CGNAT-CONSUMER</a></li>
+              <li><a href='<?php TA_CGNAT_RESELLER(); ?>'>CGNAT-RESELLER</a></li>
+              <li><a href='<?php TA_NGINX_LB(); ?>'>NGINX-LB</a></li>
+              <li><a href='<?php TA_OAM_FW(); ?>'>OAM-FW</a></li>
+          </ul>
 
       <!-- ####################VNFs drop down stops here################### -->
 
@@ -88,22 +94,19 @@ exec('python /var/www/html/test.py');
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Packet Capture <span class="caret"></span></a>
             <ul class="dropdown-menu">
-                  <li><a href="cloud6-vnfs.html">RDM52A</a></li>
-                  <li><a href="cloud7-vnfs.html">RDM52B</a></li>
-                  <li><a href="cloud8-vnfs.html">RDM52C</a></li>
-                  <li><a href="cloud8-vnfs.html">RDM52D</a></li>
-                  <li><a href="cloud8-vnfs.html">RDM52E</a></li>
-            </ul>
-
+              <li><a href='<?php TA_CGNAT_CONSUMER(); ?>'>CGNAT-CONSUMER</a></li>
+              <li><a href='<?php TA_CGNAT_RESELLER(); ?>'>CGNAT-RESELLER</a></li>
+              <li><a href='<?php TA_NGINX_LB(); ?>'>NGINX-LB</a></li>
+              <li><a href='<?php TA_OAM_FW(); ?>'>OAM-FW</a></li>
+          </ul>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CLI Executer<span class="caret"></span></a>
             <ul class="dropdown-menu">
-                  <li><a href="cloud6-vnfs.html">RDM52A</a></li>
-                  <li><a href="cloud7-vnfs.html">RDM52B</a></li>
-                  <li><a href="cloud8-vnfs.html">RDM52C</a></li>
-                  <li><a href="cloud8-vnfs.html">RDM52D</a></li>
-                  <li><a href="cloud8-vnfs.html">RDM52E</a></li>
-            </ul>
+              <li><a href='<?php TA_CGNAT_CONSUMER(); ?>'>CGNAT-CONSUMER</a></li>
+              <li><a href='<?php TA_CGNAT_RESELLER(); ?>'>CGNAT-RESELLER</a></li>
+              <li><a href='<?php TA_NGINX_LB(); ?>'>NGINX-LB</a></li>
+              <li><a href='<?php TA_OAM_FW(); ?>'>OAM-FW</a></li>
+          </ul>
 
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>
