@@ -206,7 +206,9 @@ for test_set in test_set_no:
             test_set_1=test_set.split(" ")
             test_set_2=test_set_1[9].split(".xml")
             print test_set_2[0]
-#            function test__Test_Set()
+            func= "function "+test_set_2[0]+"()"+"\n"+"{"+"\n"+"exec('python "+test_set_2[0]+".py');"
+            print func
+#            echo "load_test_set.php";
 #            {
 #              echo "load_test_set.php";
 #            }
