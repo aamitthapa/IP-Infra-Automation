@@ -187,7 +187,9 @@ test_set_ls=os.system("ls -l Test_Set/ | grep FULL")
 test_set_no=str(test_set_ls).split("\n")
 for test_set in test_set_no:
         if "FULL" in test_set:
-            print test_set.split(" ")[8].split("FULL")[0]
+            test_set_1=test_set.split(" ")
+            test_set_2=test_set_1[8].split("FULL")
+            print test_set_2 
 #            test_set_php.write()
 
 #         <button><h4>CGNAT_CONSUMER</h4></button>
