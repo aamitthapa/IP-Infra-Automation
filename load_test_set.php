@@ -174,8 +174,8 @@ exec('python /var/www/html/test.py');
   <div class="container">
     <div class="jumbotron">
      <p></p>
-     <button font-size="30px">CGNAT_CONSUMER</button>
-     <button>CGNAT_RESELLER</button>
+     <button><h3>CGNAT_CONSUMER</h3></button>
+     <button><h3>CGNAT_RESELLER</h3></button>
      <h3><button>NGINX_LB</button></h3>
      <h3><button>OAM_FW</button></h3>
    </div>
