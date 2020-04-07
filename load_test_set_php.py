@@ -204,7 +204,7 @@ for test_set in test_set_no:
         if "FULL" in test_set:
             test_set_1=test_set.split(" ")
             test_set_2=test_set_1[9].split(".xml")
-            func= "function "+test_set_2[0]+"()"+"\n"+"{"+"\n"+"exec('python "+test_set_2[0]+".py');"+"\n"+'echo "'+test_set_2[0]+".php"+'";'+"\n"+"}"
+            func= "function "+test_set_2[0]+"()"+"\n"+"{"+"\n"+"exec('python "+test_set_2[0]+".py');"+"\n"+'echo "'+test_set_2[0]+".php"+'";'+"\n"+"}"+"\n"
             test_set_php.write(func)
 test_set_php.write(test_set_php_mid)
 for test_set in test_set_no:
