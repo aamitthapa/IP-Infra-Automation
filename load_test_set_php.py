@@ -189,7 +189,7 @@ for test_set in test_set_no:
         if "FULL" in test_set:
             test_set_1=test_set.split(" ")
             test_set_2=test_set_1[8].split("FULL")
-            print test_set_2 
+#            print test_set_2 
 #            test_set_php.write()
 
 #         <button><h4>CGNAT_CONSUMER</h4></button>
