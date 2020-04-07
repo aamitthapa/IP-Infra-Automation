@@ -183,7 +183,7 @@ exec('python /var/www/html/test.py');
        <br><br>
        <div class="container">
 '''
-test_set_php_end='''     </center>
+test_set_php_end=''' </center>
        <div>
    </div>
 
@@ -204,8 +204,8 @@ for test_set in test_set_no:
             test_set_1=test_set.split(" ")
             test_set_2=test_set_1[9].split("_TEST_SET_FULL")
             test_set_php.write("<button><h4>"+test_set_2[0]+"</h4></button>\n")
-            if i%3==0:
-                test_set_php.write("<br><br>")
+#            if i%3==0:
+#                test_set_php.write("<br><br>")
             i=i+1
 test_set_php.write(test_set_php_end)
 
