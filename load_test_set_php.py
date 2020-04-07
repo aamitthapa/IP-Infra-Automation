@@ -1,5 +1,6 @@
 import string
 import os
+import subprocess
 import xml.etree.ElementTree as ET
 BASE_DIR=os.getcwd()
 test_set_php=open("load_test_set.php", "w")
@@ -181,18 +182,25 @@ exec('python /var/www/html/test.py');
        <h2>Select Test Set to Run</h2>
        <br><br>
 '''
+test_set_php_end='''     </center>
+   </div>
+
+
+  </div>
+
+
+</body>
+</html>'''
+
+
 test_set_php.write(test_set_php_base)
-test_set_ls=os.system("ls -l Test_Set/ | grep FULL")
-#print test_set_ls
-test_set_no=str(test_set_ls).split("\n")
+test_set_ls=subprocess.check_output("ls -l Test_Set/ | grep FULL", shell=True)
+test_set_no=test_set_ls.split("\n")
 for test_set in test_set_no:
         if "FULL" in test_set:
             test_set_1=test_set.split(" ")
-            test_set_2=test_set_1[8].split("FULL")
-#            print test_set_2 
-#            test_set_php.write()
+            test_set_2=test_set_1[9].split("_FULL")
+            test_set_php.write("<div><button<h4>"+test_set_2[0]+"</h4><button></div>\n")
+test_set_php.write(test_set_php_end)
 
 #         <button><h4>CGNAT_CONSUMER</h4></button>
-#         <button><h4>CGNAT_RESELLER</h4></button>
-#         <button><h4>NGINX_LB</h4></button>
-#         <button><h4>OAM_FW</h4></button>
