@@ -200,7 +200,7 @@ i=1
 for test_set in test_set_no:
         if "FULL" in test_set:
             test_set_1=test_set.split(" ")
-            test_set_2=test_set_1[9].split("_FULL")
+            test_set_2=test_set_1[9].split("_TEST_SET_FULL")
             test_set_php.write("<button><h4>"+test_set_2[0]+"</h4></button>\n")
             if i%3==0:
                 test_set_php.write("<br>")
