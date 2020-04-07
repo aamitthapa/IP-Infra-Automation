@@ -184,7 +184,7 @@ exec('python /var/www/html/test.py');
 test_set_php.write(test_set_php_base)
 test_set_ls=os.system("ls -l Test_Set/ | grep FULL")
 print test_set_ls
-#test_set_no=test_set_ls.split("\n")
+test_set_no=test_set_ls.split("\n")
 #for test_set in test_set_no:
 #        print test_set.split(" ")[8].split("FULL")[0]
 #        test_set_php.write()
