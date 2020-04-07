@@ -173,11 +173,11 @@ exec('python /var/www/html/test.py');
 
   <div class="container">
     <div class="jumbotron">
-     <p></p>
+     <p></p><p></p><p></p>
      <button><h3>CGNAT_CONSUMER</h3></button>
      <button><h3>CGNAT_RESELLER</h3></button>
-     <h3><button>NGINX_LB</button></h3>
-     <h3><button>OAM_FW</button></h3>
+     <button><h3>NGINX_LB</h3></button>
+     <button><h3>OAM_FW</h3></button>
    </div>
 
 
