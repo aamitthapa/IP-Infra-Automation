@@ -14,6 +14,19 @@ f2=open("index_mid.php", "r")
 f3=open("index_end.php", "r")
 for lines in f1:
 	f.write(lines)
+f.write('''
+if(isset($_POST['run'])){ //to run PHP script on run
+	$fp=fopen('test_set_select','w');
+	if(!empty($_POST['test_cases'])){ // Loop to store and display values of individual checked checkbox.
+		foreach($_POST['test_cases'] as $selected){
+		fwrite($fp, $selected);
+	fclose($fp);
+}
+}
+}
+exec('python test_set_select.py');
+?>''')
+
 for lines in f2:
 	f.write(lines)
 f.write("<center><h3>Select Test Cases to Run</h3></center>")
@@ -26,17 +39,7 @@ f.write('''
 <input type="submit" name="run" value="Run"/>
 </form>''')
 
-f.write('''
-<?php
-if(isset($_POST['run'])){//to run PHP script on submit
-if(!empty($_POST['test_case'])){
-// Loop to store and display values of individual checked checkbox.
-foreach($_POST['test_case'] as $selected){
-echo $selected."</br>";
-}
-}
-}
-?>''')
+
 
 for lines in f3:
 	f.write(lines)
