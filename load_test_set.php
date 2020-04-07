@@ -177,10 +177,10 @@ exec('python /var/www/html/test.py');
      <br>
      <h2>Select Test Set to Run</h2>
      <br><br><br>
-     <button><h3>CGNAT_CONSUMER</h3></button>
-     <button><h3>CGNAT_RESELLER</h3></button>
-     <button><h3>NGINX_LB</h3></button>
-     <button><h3>OAM_FW</h3></button>
+     <button><h4>CGNAT_CONSUMER</h4></button>
+     <button><h4>CGNAT_RESELLER</h4></button>
+     <button><h4>NGINX_LB</h4></button>
+     <button><h4>OAM_FW</h4></button>
      </center>
    </div>
 
