@@ -17,7 +17,7 @@
 <?php
 function Load_Test_Set()
 {
-  exec('python /var/html/update_test_set_php.py')
+  exec('python /var/html/load_test_set_php.py')
   echo "load_test_set.php";
 }
 function TA_CGNAT_CONSUMER()
