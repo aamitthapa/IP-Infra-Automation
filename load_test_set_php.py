@@ -181,8 +181,10 @@ exec('python /var/www/html/test.py');
        <br>
        <h2>Select Test Set to Run</h2>
        <br><br>
+       <div class="container">
 '''
 test_set_php_end='''     </center>
+       <div>
    </div>
 
 
