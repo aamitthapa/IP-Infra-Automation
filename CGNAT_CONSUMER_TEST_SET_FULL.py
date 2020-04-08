@@ -29,8 +29,8 @@ if(isset($_POST['run']))//to run PHP script on run
       }
 }
 exec('python test_set_select.py');
+echo "test_set_select.php";
 ''')
-
 for lines in f2:
 	f.write(lines)
 f.write("<center><h3><label>Select Test Cases to Run</label></h3></center>")
