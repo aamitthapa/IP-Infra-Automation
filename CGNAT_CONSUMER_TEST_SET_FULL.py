@@ -23,7 +23,7 @@ if(isset($_POST['run']))//to run PHP script on run
         foreach($_POST['test_cases'] as $selected)
         {
 		fwrite($fp, $selected);
-        fwite($fp, "\n");
+        fwite($fp, "/n");
         }
 	fclose($fp);
       }
