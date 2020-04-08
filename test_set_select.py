@@ -8,7 +8,6 @@ import xml.etree.ElementTree as ET
 import socket
 test_set_full=open('Test_Set/CGNAT_CONSUMER_TEST_SET_FULL.xml', "r")
 test_set_select=open('test_set_select')
-root = tree.getroot()
 f=open("test_set.php", "w")
 f1=open("index_base.php", "r")
 f2=open("index_mid.php", "r")
