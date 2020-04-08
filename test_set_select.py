@@ -13,9 +13,11 @@ test_set_select=open('test_set_select', "r")
 #f2=open("index_mid.php", "r")
 #f3=open("index_end.php", "r")
 for lines1 in test_set_full:
+#    print lines1
     for lines2 in test_set_select:
+#        print lines2
         if lines2 in lines1:
-            print lines
+            print lines1
 #f.close()
 #f1.close()
 #f2.close()
