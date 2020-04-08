@@ -29,7 +29,7 @@ exec('python test_set_select.py');
 
 for lines in f2:
 	f.write(lines)
-f.write("<center><h3>Select Test Cases to Run</h3></center>")
+f.write("<center><label><h3>Select Test Cases to Run</h3></label></center>")
 f.write('<form action="#" method="post" class="container">\n')
 f.write('''<input type="checkbox" name= "Select All" value="Select All"><label>Select All</label><br>\n''')
 for test_case in root.findall('test_case'):
