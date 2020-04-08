@@ -25,7 +25,7 @@ if(isset($_POST['run'])){ //to run PHP script on run
 }
 }
 exec('python test_set_select.py');
-?>''')
+''')
 
 for lines in f2:
 	f.write(lines)
