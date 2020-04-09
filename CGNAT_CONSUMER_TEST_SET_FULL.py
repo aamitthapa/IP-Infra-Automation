@@ -28,7 +28,8 @@ if(isset($_POST['run']))//to run PHP script on run
 	fclose($fp);
       }
 	 exec('python test_set_select.py');
-	 echo "test_set_select.php";
+#	 echo "test_set_select.php";
+	 header("Location: test_set_select.php");
 }
 #exec('python test_set_select.py');
 #echo "test_set_select.php";
