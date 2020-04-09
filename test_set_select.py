@@ -34,19 +34,19 @@ for lines in f1:
 
 
 f.write('''
-if(isset($_POST['run']))//to run PHP script on run
-{
-    $fp=fopen('test_set_select','w');
-	if(!empty($_POST['test_cases'])) // Loop to store and display values of individual checked checkbox.
-      {
-        foreach($_POST['test_cases'] as $selected)
-        {
-		fwrite($fp, $selected);
-        fwrite($fp, "\n");
-        }
-	fclose($fp);
-      }
-}
+#if(isset($_POST['run']))//to run PHP script on run
+#{
+#    $fp=fopen('test_set_select','w');
+#	if(!empty($_POST['test_cases'])) // Loop to store and display values of individual checked checkbox.
+#      {
+#        foreach($_POST['test_cases'] as $selected)
+#        {
+#		fwrite($fp, $selected);
+#        fwrite($fp, "\n");
+#        }
+#	fclose($fp);
+#      }
+#}
 ''')
 
 for lines in f2:
