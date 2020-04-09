@@ -52,13 +52,13 @@ if(isset($_POST['run']))//to run PHP script on run
 for lines in f2:
 	f.write(lines)
 f.write("<center><h3><label>Select Test Cases to Run</label></h3></center>")
-f.write('<form action="test.set.php" method="post" class="container">\n')
+f.write('<form action="test_set.php" method="post" class="container">\n')
 #f.write('''<input type="checkbox" name= "Select All" value="Select All"><label>Select All</label><br>\n''')
 
 
 for test_case in root.findall('test_case'):
         test_case=test_case.attrib.get('name')
-        f.write('''<input type="checkbox" name= "test_cases[]" value="'''+test_case+'"'+'''><label>'''+ test_case+'''</label><br>\n''')
+        f.write('''<label>'''+ test_case+'''</label><br>\n''')
 f.write('''
 <input type="submit" name="run" value="Stop"/>
 </form>''')
