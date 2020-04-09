@@ -33,7 +33,7 @@ for lines in f1:
 	f.write(lines)
 
 
-f.write('''
+#f.write('''
 #if(isset($_POST['run']))//to run PHP script on run
 #{
 #    $fp=fopen('test_set_select','w');
@@ -47,7 +47,7 @@ f.write('''
 #	fclose($fp);
 #      }
 #}
-''')
+#''')
 
 for lines in f2:
 	f.write(lines)
