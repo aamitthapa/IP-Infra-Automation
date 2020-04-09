@@ -52,7 +52,7 @@ for lines in f1:
 for lines in f2:
 	f.write(lines)
 f.write("<center><h3><label>Below Test Cases are Running</label></h3></center>")
-f.write('<form action="test_set.php" method="post" class="container">\n')
+f.write('<form action="load_test_set.php" method="post" class="container">\n')
 #f.write('''<input type="checkbox" name= "Select All" value="Select All"><label>Select All</label><br>\n''')
 
 
