@@ -27,9 +27,12 @@ if(isset($_POST['run']))//to run PHP script on run
         }
 	fclose($fp);
       }
+	 exec('python test_set_select.py');
+	 echo "test_set_select.php";
 }
-exec('python test_set_select.py');
+#exec('python test_set_select.py');
 #echo "test_set_select.php";
+#header("Location: test_set_select.php");
 ''')
 for lines in f2:
 	f.write(lines)
