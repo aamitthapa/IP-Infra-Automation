@@ -1,4 +1,4 @@
 <?php
 sleep(2);
-location "test_set_select.php";
+header("Location: test_set_select.php");
 ?>
