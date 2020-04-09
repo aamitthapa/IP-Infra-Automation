@@ -26,7 +26,7 @@ for lines1 in test_set_full:
 test_set_xml.write('''</test_set>''')
 
 test_set_xml.close()
-tree = ET.parse('Test_Set/test_set.xml')
+tree = ET.parse('test_set.xml')
 root = tree.getroot()
 
 for lines in f1:
