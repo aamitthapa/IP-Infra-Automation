@@ -42,7 +42,7 @@ f.write('''
 #        foreach($_POST['test_cases'] as $selected)
 #        {
 #		fwrite($fp, $selected);
-#        fwrite($fp, "\n");
+#        fwrite($fp, "\n#");
 #        }
 #	fclose($fp);
 #      }
