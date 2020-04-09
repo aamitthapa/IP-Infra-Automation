@@ -60,7 +60,7 @@ for test_case in root.findall('test_case'):
         test_case=test_case.attrib.get('name')
         f.write('''<label>'''+ test_case+'''</label><br>\n''')
 f.write('''
-<input type="submit" name="run" value="Stop"/>
+<input type="submit" name="stop" value="Stop"/>
 </form>''')
 
 for lines in f3:
