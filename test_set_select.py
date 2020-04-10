@@ -31,31 +31,10 @@ root = tree.getroot()
 
 for lines in f1:
 	f.write(lines)
-#f.write(''' sleep(2);
-#header("Location: test_set_select.php");''')
-
-#f.write('''
-#if(isset($_POST['run']))//to run PHP script on run
-#{
-#    $fp=fopen('test_set_select','w');
-#	if(!empty($_POST['test_cases'])) // Loop to store and display values of individual checked checkbox.
-#      {
-#        foreach($_POST['test_cases'] as $selected)
-#        {
-#		fwrite($fp, $selected);
-#        fwrite($fp, "\n#");
-#        }
-#	fclose($fp);
-#      }
-#}
-#''')
-
 for lines in f2:
 	f.write(lines)
 f.write("<center><h3><label>Below Test Cases are Running</label></h3></center>")
 f.write('<form action="load_test_set.php" method="post" class="container">\n')
-#f.write('''<input type="checkbox" name= "Select All" value="Select All"><label>Select All</label><br>\n''')
-
 
 for test_case in root.findall('test_case'):
         test_case=test_case.attrib.get('name')
