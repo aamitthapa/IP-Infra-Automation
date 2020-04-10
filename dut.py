@@ -291,7 +291,7 @@ def execute_command():
 			sftp.get("GI_MERGED_"+timestr+".pcapng", BASE_DIR+"/"+test_name+"_"+timestr+"/"+"GI_MERGED_"+timestr+".pcapng")
 			print "GN_MERGED_"+timestr+".pcapng", "\n"+"GI_MERGED_"+timestr+".pcapng"
 			test_log=open("Test_Result/test_log", "a")
-			test_log.write("GN_MERGED_"+timestr+".pcapng", "\n"+"GI_MERGED_"+timestr+".pcapng"+"\n")
+			test_log.write("GN_MERGED_"+timestr+".pcapng"+"\n"+"GI_MERGED_"+timestr+".pcapng"+"\n")
 			test_log.close()
 		############copying unmerged pcap##############
 		for items in output_file2:
