@@ -67,6 +67,10 @@ f.write('''
 <div class="container">
 <div class="jumbotron">
 <center><h3><label>Test Logs</label></h3></center>''')
+test_log=open("Test_Result/test_log", "r")
+test_log.close()
+output=os.system('tail -1000 Test_Result/test_log')
+f.write(output)
 for lines in f3:
 	f.write(lines)
 f.close()
