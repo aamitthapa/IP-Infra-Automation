@@ -62,7 +62,13 @@ for test_case in root.findall('test_case'):
 f.write('''
 <input type="submit" name="stop" value="Stop"/>
 </form>''')
-
+<div class="container">
+<div class="jumbotron">
+ <center>
+ <h4>Test Logs</h4>
+</center>
+</div>
+</div>
 for lines in f3:
 	f.write(lines)
 f.close()
