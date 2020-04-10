@@ -252,9 +252,9 @@ def execute_command():
 		ssh_2222 = paramiko.SSHClient()
 		ssh_2222.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 		ssh_2222.connect(nodeip.rstrip(), port=2222, username=GTAC_username, password=GTAC_password)
-		print "SFTP on 2222 connected \n Below are the PCAPS created \n"
+		print "SFTP on 2222 connected \nBelow are the PCAPS created \n"
 		test_log=open("Test_Result/test_log", "a")
-		test_log.write("SFTP on 2222 connected \n Below are the PCAPS created \n")
+		test_log.write("SFTP on 2222 connected \nBelow are the PCAPS created \n")
 		test_log.close()
 		stdin, stdout, stderr = ssh_2222.exec_command("ls -l /boot/partitions/ext-storage/varlog/eventlog/AMIT_" + timestr+"*")
 		output = stdout.readlines()
