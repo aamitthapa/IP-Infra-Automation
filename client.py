@@ -44,20 +44,21 @@ def main(timest):
 	file_logs=open(BASE_DIR+"/"+test_name+"_"+timestr+"/"+test_name+"_UE_"+timestr+"."+"txt","a")
 	test_env="APN "+apn+"\n"+"IMSI "+imsi+"\n"+"Test Duration "+duration+"\n"+"Traffic "+bash_script.split("/")[3]+"\n"
 	file_logs.write(test_env)
-    test_log=open("Test_Result/test_log", "a")
+        test_log=open("Test_Result/test_log", "a")
 #	print "opened client"
 	try:
 #		print "connecting to ", client_ip
 		ssh.connect(client_ip, port=22, username=CLIENT_username, password=CLIENT_password, timeout=8)
-#		print "Connected to CLIENT ", client_ip
-#        test_log=open("Test_Result/test_log", "a")
-		test_log.write("Connected to CLIENT "+ client_ip)
-        test_log.close()
+		print "Connected to CLIENT ", client_ip
+                test_log=open("Test_Result/test_log", "a")
+		test_log.write("Connected to CLIENT "+ client_ip+"\n")
+                test_log.close()
 		execute_command()
 	except (paramiko.ssh_exception.AuthenticationException, paramiko.ssh_exception.NoValidConnectionsError, paramiko.SSHException, socket.timeout):
 		print "Authentication failure on Client"
+		test_log=open("Test_Result/test_log", "a")
 		test_log.write("Authentication failure on Client \n")
-        test_log.close()
+                test_log.close()
 #		file_logs = open(test_name+"_UE_"+timestr+"."+"txt","a")
 #		file_logs = open(BASE_DIR+"/"+test_name+"_"+timestr+"/"+test_name+"_UE_"+timestr+"."+"txt","a")
 		file_logs.write("SSH to Client Failed")
@@ -76,9 +77,9 @@ def execute_command():
 	stdin, stdout, stderr = ssh.exec_command(connectionup)
 	if retry_attach==0:
 		print "Attaching UE"
-        test_log=open("Test_Result/test_log", "a")
-        test_log.write("Attaching UE \n")
-        test_log.close()
+                test_log=open("Test_Result/test_log", "a")
+                test_log.write("Attaching UE \n")
+                test_log.close()
 	time.sleep(30)
 	checkipversion=apn.split('-')
 	stdin, stdout, stderr = ssh.exec_command("nmcli d show ttyUSB3 | grep IP4.GATEWAY")
@@ -91,9 +92,9 @@ def execute_command():
 		checkattach.write("IPV4 attach is good")
 		checkattach.close()
 		print "IPV4 attach is good"
-        test_log=open("Test_Result/test_log", "a")
+                test_log=open("Test_Result/test_log", "a")
 		test_log.write("IPV4 attach is good \n")
-        test_log.close()
+                test_log.close()
 		file_logs.write("IPV4 attach is good \n")
 		route1="ip route add 172.21.26.0/24 via " + IPV4_GW.split()[1]
                 route2="ip route add 50.227.195.3 via " + IPV4_GW.split()[1]
@@ -104,9 +105,9 @@ def execute_command():
 		time.sleep(5)
 		traffic="bash "+bash_script
 		print "Running ", bash_script
-        test_log=open("Test_Result/test_log", "a")
+                test_log=open("Test_Result/test_log", "a")
 		test_log.write("Running " + bash_script+"\n")
-        test_log.close()
+                test_log.close()
 		for i in range(0, duration_n-3, 5):
 			if i==0:
                         	stdin, stdout, stderr = ssh.exec_command(traffic)
@@ -125,18 +126,18 @@ def execute_command():
 		checkattach.write("IPV6 attach is good")
 		checkattach.close()
 		print "IPV6 attach is good"
-        test_log=open("Test_Result/test_log", "a")
-        test_log.write("IPV6 attach is good")
-        test_log.close()
+                test_log=open("Test_Result/test_log", "a")
+                test_log.write("IPV6 attach is good")
+                test_log.close()
 		file_logs.write("IPV6 attach is good \n")
 		route4="ip -6 route add 2606:ae00:2001:2311::/64 via "+ IPV6_GW.split()[1] + " wwp0s20u6i7"
                 stdin, stdout, stderr = ssh.exec_command(route4)
 		time.sleep(5)
 		traffic="bash "+bash_script
 		print "Running ", bash_script
-        test_log=open("Test_Result/test_log", "a")
-        test_log.write("Running " + bash_script+"\n")
-        test_log.close()
+                test_log=open("Test_Result/test_log", "a")
+                test_log.write("Running " + bash_script+"\n")
+                test_log.close()
 
                 for i in range(0, duration_n-3, 5):
                         if i==0:
@@ -156,9 +157,9 @@ def execute_command():
                 checkattach.write("IPV4V6 attach is good")
 		checkattach.close()
 		print "IPV4V6 attach is good"
-        test_log=open("Test_Result/test_log", "a")
-        test_log.write("IPV4V6 attach is good \n")
-        test_log.close()
+                test_log=open("Test_Result/test_log", "a")
+                test_log.write("IPV4V6 attach is good \n")
+                test_log.close()
 		file_logs.write("IPV4V6 attach is good \n")
 		route1="ip route add 172.21.26.0/24 via " + IPV4_GW.split()[1]
                 route2="ip route add 50.227.195.3 via " + IPV4_GW.split()[1]
@@ -171,9 +172,9 @@ def execute_command():
 		time.sleep(5)
                 traffic="bash "+bash_script
 		print "Running ", bash_script
-        test_log=open("Test_Result/test_log", "a")
-        test_log.write("Running " + bash_script + "\n")
-        test_log.close()
+                test_log=open("Test_Result/test_log", "a")
+                test_log.write("Running " + bash_script + "\n")
+                test_log.close()
 
                 for i in range(0, duration_n-3, 5):
                         if i==0:
@@ -194,15 +195,15 @@ def execute_command():
 		checkattach.write("UE ATTACH FAILED")
 		checkattach.close()
 		print "UE ATTACH FAILED"
-        test_log=open("Test_Result/test_log", "a")
-        test_log.write("UE ATTACH FAILED")
-        test_log.close()
+                test_log=open("Test_Result/test_log", "a")
+        	test_log.write("UE ATTACH FAILED \n")
+        	test_log.close()
 
 		if retry_attach<2:
 			print "Retrying UE ATTACH"
-            test_log=open("Test_Result/test_log", "a")
-            test_log.write("Retrying UE ATTACH")
-            test_log.close()
+            		test_log=open("Test_Result/test_log", "a")
+            		test_log.write("Retrying UE ATTACH \n")
+            		test_log.close()
 			if retry_attach==1:
 				file_logs.write("UE ATTACH FAILED \n")
 			retry_attach=retry_attach+1
