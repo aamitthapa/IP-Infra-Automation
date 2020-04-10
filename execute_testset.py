@@ -74,8 +74,8 @@ if check_run == 0 and i==1:
 	time.sleep(2)
 if check_run != 0 and i!= 1:
 	os.system('mv *"$(date +"%Y%m%d")"* Test_Result/')
-	print "Test Set Complete!!!!!!"
+	print "Test Set Complete!!!!!! \n"
 	test_log=open("Test_Result/test_log", "a")
-        test_log.write("Test Set Complete!!!!!!")
+        test_log.write("Test Set Complete!!!!!! \n")
         test_log.close()
 	time.sleep(2)
