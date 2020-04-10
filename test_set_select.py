@@ -65,10 +65,8 @@ f.write('''
 </div>
 </div>
 <div class="container">
-<center><h3><label>Test Logs</label></h3></center>
-testing logs Below
-213
-123''')
+<div class="jumbotron">
+<center><h3><label>Test Logs</label></h3></center>''')
 for lines in f3:
 	f.write(lines)
 f.close()
