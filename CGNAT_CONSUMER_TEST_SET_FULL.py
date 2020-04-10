@@ -28,15 +28,9 @@ if(isset($_POST['run']))//to run PHP script on run
 	fclose($fp);
       }
 	 exec('python test_set_select.py');
-#	 exec('rm /var/www/html/IP-Infra-Automation/Test_Result/test_log');
 	 exec('python execute_testset.py &');
-#	 exec('python test_output_update.py &');
-#	 echo "test_set_select.php";
 	 header("Location: test_set_select.php");
 }
-#exec('python test_set_select.py');
-#echo "test_set_select.php";
-#header("Location: test_set_select.php");
 ''')
 for lines in f2:
 	f.write(lines)
