@@ -152,7 +152,7 @@ def execute_command():
 		file_logs.write("Could not run test as UE not found")
 		file_logs.close()
 		time.sleep(5)
-		sys.exit() 
+		sys.exit()
 	pdnsession_data=output_file.split(" ")
 	pdnsession=pdnsession_data[2].rstrip()
 	tempfile = open('input.xml', 'r+' )
@@ -229,10 +229,7 @@ def execute_command():
 		print("network-context SAEGW ip-interface SAEGW_"+slot_final+"_1_5 "+"startcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_SAEGW_"+slot_final+"_1_5")
 		print("network-context SAEGW ip-interface SAEGW_"+slot_final+"_2_5 "+"startcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_SAEGW_"+slot_final+"_2_5")
 		test_log=open("Test_Result/test_log", "a")
-		test_log.write("network-context SGI-CON ip-interface GI_"+slot_final+"_1_5 "+"startcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_GI_"+slot_final+"_1_5"+"\n"+"network-context S
-GI-CON ip-interface GI_"+slot_final+"_2_5 "+"startcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_GI_"+slot_final+"_2_5"+"\n"+"network-context SAEGW ip-interface SAEGW_"+slot_final+"_1_5 "+"sta
-rtcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_SAEGW_"+slot_final+"_1_5"+"\n"+"network-context SAEGW ip-interface SAEGW_"+slot_final+"_2_5 "+"startcapture duration "+seconds_str+" count 1000
-00000 file-name "+"AMIT_"+timestr+"_SAEGW_"+slot_final+"_2_5"+"\n")
+		test_log.write("network-context SGI-CON ip-interface GI_"+slot_final+"_1_5 "+"startcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_GI_"+slot_final+"_1_5"+"\n"+"network-context SGI-CON ip-interface GI_"+slot_final+"_2_5 "+"startcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_GI_"+slot_final+"_2_5"+"\n"+"network-context SAEGW ip-interface SAEGW_"+slot_final+"_1_5 "+"startcapture duration "+seconds_str+" count 100000000 filename "+"AMIT_"+timestr+"_SAEGW_"+slot_final+"_1_5"+"\n"+"network-context SAEGW ip-interface SAEGW_"+slot_final+"_2_5 "+"startcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_SAEGW_"+slot_final+"_2_5"+"\n")
 		test_log.close()
 		ssh.exec_command("network-context SGI-CON ip-interface GI_"+slot_final+"_1_5 "+"startcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_GI_"+slot_final+"_1_5")
 		ssh.exec_command("network-context SGI-CON ip-interface GI_"+slot_final+"_2_5 "+"startcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_GI_"+slot_final+"_2_5")
