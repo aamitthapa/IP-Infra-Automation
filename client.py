@@ -48,10 +48,10 @@ def main(timest):
 	try:
 #		print "connecting to ", client_ip
 		ssh.connect(client_ip, port=22, username=CLIENT_username, password=CLIENT_password, timeout=8)
-		print "Connected to CLIENT ", client_ip
-        test_log_1=open("Test_Result/test_log", "a")
-		test_log_1.write("Connected to CLIENT "+ client_ip)
-        test_log_1.close()
+#		print "Connected to CLIENT ", client_ip
+        test_log=open("Test_Result/test_log", "a")
+		test_log.write("Connected to CLIENT "+ client_ip)
+        test_log.close()
 		execute_command()
 	except (paramiko.ssh_exception.AuthenticationException, paramiko.ssh_exception.NoValidConnectionsError, paramiko.SSHException, socket.timeout):
 		print "Authentication failure on Client"
