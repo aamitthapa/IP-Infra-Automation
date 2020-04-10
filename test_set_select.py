@@ -65,7 +65,6 @@ f.write('''
 </div>
 </div>
 <div class="container">
-<div class="jumbotron">
 <center><h3><label>Test Logs</label></h3></center>
 testing logs Below
 213
