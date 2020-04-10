@@ -67,7 +67,7 @@ f.write('''
 <div class="container">
 <div class="jumbotron">
 <center>
-<h4>Test Logs</h4>
+<h3><label>Test Logs</label></h3>
 </center>''')
 for lines in f3:
 	f.write(lines)
