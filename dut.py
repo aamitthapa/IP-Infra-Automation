@@ -95,7 +95,7 @@ def take_logs():
 	if log_count==2:
 		print "Taking post Logs"
 		test_log=open("Test_Result/test_log", "a")
-		test_log.write("Taking port Logs \n")
+		test_log.write("Taking post Logs \n")
 		test_log.close()
 		file_logs.write("########POSTLOGS###########################################################################################################################################\n")
 	#########################################################
@@ -229,7 +229,10 @@ def execute_command():
 		print("network-context SAEGW ip-interface SAEGW_"+slot_final+"_1_5 "+"startcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_SAEGW_"+slot_final+"_1_5")
 		print("network-context SAEGW ip-interface SAEGW_"+slot_final+"_2_5 "+"startcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_SAEGW_"+slot_final+"_2_5")
 		test_log=open("Test_Result/test_log", "a")
-		test_log.write("network-context SGI-CON ip-interface GI_"+slot_final+"_1_5 "+"startcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_GI_"+slot_final+"_1_5"+"\n"+"network-context SGI-CON ip-interface GI_"+slot_final+"_2_5 "+"startcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_GI_"+slot_final+"_2_5"+"\n"+"network-context SAEGW ip-interface SAEGW_"+slot_final+"_1_5 "+"startcapture duration "+seconds_str+" count 100000000 filename "+"AMIT_"+timestr+"_SAEGW_"+slot_final+"_1_5"+"\n"+"network-context SAEGW ip-interface SAEGW_"+slot_final+"_2_5 "+"startcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_SAEGW_"+slot_final+"_2_5"+"\n")
+		test_log.write("network-context SGI-CON ip-interface GI_"+slot_final+"_1_5 "+"startcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_GI_"+slot_final+"_1_5"+"\n"+"network-context S
+GI-CON ip-interface GI_"+slot_final+"_2_5 "+"startcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_GI_"+slot_final+"_2_5"+"\n"+"network-context SAEGW ip-interface SAEGW_"+slot_final+"_1_5 "+"sta
+rtcapture duration "+seconds_str+" count 100000000 filename "+"AMIT_"+timestr+"_SAEGW_"+slot_final+"_1_5"+"\n"+"network-context SAEGW ip-interface SAEGW_"+slot_final+"_2_5 "+"startcapture duration "+seconds_str+" count 10000
+0000 file-name "+"AMIT_"+timestr+"_SAEGW_"+slot_final+"_2_5"+"\n")
 		test_log.close()
 		ssh.exec_command("network-context SGI-CON ip-interface GI_"+slot_final+"_1_5 "+"startcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_GI_"+slot_final+"_1_5")
 		ssh.exec_command("network-context SGI-CON ip-interface GI_"+slot_final+"_2_5 "+"startcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_GI_"+slot_final+"_2_5")
@@ -252,9 +255,9 @@ def execute_command():
 		ssh_2222 = paramiko.SSHClient()
 		ssh_2222.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 		ssh_2222.connect(nodeip.rstrip(), port=2222, username=GTAC_username, password=GTAC_password)
-		print "SFTP on 2222 connected \nBelow are the PCAPS created \n"
+		print "SFTP on 2222 connected \nBelow are the PCAPS created"
 		test_log=open("Test_Result/test_log", "a")
-		test_log.write("SFTP on 2222 connected \nBelow are the PCAPS created \n")
+		test_log.write("SFTP on 2222 connected \nBelow are the PCAPS created")
 		test_log.close()
 		stdin, stdout, stderr = ssh_2222.exec_command("ls -l /boot/partitions/ext-storage/varlog/eventlog/AMIT_" + timestr+"*")
 		output = stdout.readlines()
