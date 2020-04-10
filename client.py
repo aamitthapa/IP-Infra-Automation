@@ -50,6 +50,7 @@ def main(timest):
 		ssh.connect(client_ip, port=22, username=CLIENT_username, password=CLIENT_password, timeout=8)
 #		print "Connected to CLIENT ", client_ip
         test_log=open("Test_Result/test_log", "a")
+#        test_log=open("Test_Result/test_log", "a")
 		test_log.write("Connected to CLIENT "+ client_ip)
         test_log.close()
 		execute_command()
