@@ -26,11 +26,12 @@ if(isset($_POST['run']))//to run PHP script on run
         fwrite($fp, "\n");
         }
 	fclose($fp);
+	  exec('python test_set_select.py');
+	  exec('python execute_testset.py > test123 &');
+	  exec('rm test123');
+	  header("Location: test_set_select.php");
       }
-	 exec('python test_set_select.py');
-	 exec('python execute_testset.py > test123 &');
-	 exec('rm test123');
-	 header("Location: test_set_select.php");
+
 }
 ''')
 for lines in f2:
