@@ -29,7 +29,6 @@ while ( true )
 #		$file = fopen("autoupdate.txt","w");
 #		fwrite($file, $data);
 		$json = json_encode( $arrData );
-		fwrite($file, $json);
 		echo $json;
 
 		break;
