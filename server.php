@@ -26,8 +26,8 @@ while ( true )
 			'content' => $data,
 			'timestamp' => $modifiedAt
 		);
-		$file = fopen("autoupdate.txt","w");
-		fwrite($file, $data);
+#		$file = fopen("autoupdate.txt","w");
+#		fwrite($file, $data);
 		$json = json_encode( $arrData );
 		fwrite($file, $json);
 		echo $json;
