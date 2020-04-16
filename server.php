@@ -17,9 +17,9 @@ while ( true )
 		$handle = fopen("Test_Result/test_log", "rb");
 		$data = stream_get_contents($handle);
 		fclose($handle);
-		$test= fopen("test_auto.txt", "w");
-		fwrite($test, $data);
-		fclose($test);
+#		$test= fopen("test_auto.txt", "w");
+#		fwrite($test, $data);
+#		fclose($test);
 	#	$data = file_get_contents( $dataFileName );
 
 		$arrData = array(
@@ -30,6 +30,14 @@ while ( true )
 #		fwrite($file, $data);
 		$json = json_encode( $arrData );
 		echo $json;
+    if(strpos($data, "Test Set Complete!!!!!!") !== false)
+    {
+    $file= fopen("test_set_select.php", "rb");
+    $check = stream_get_contents($file);
+    $str = str_replace('''<input type="submit" name="stop" value="Stop"/>''','''<input type="submit" name="Test Set Complete!!!!" value="Test Set Complete!!!!"/>''', $check);
+    fwrite($file, $str);
+    header("Location: test_set_select.php");
+    }
 
 		break;
 	}
