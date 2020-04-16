@@ -32,7 +32,7 @@ while ( true )
 		echo $json;
     if(strpos($data, "Test Set Complete!!!!!!") !== false)
     {
-    $file= fopen("test_set_select.php", "rb");
+    $file= fopen("test_set_select.php", "w");
     $check = stream_get_contents($file);
     $str = str_replace('<input type="submit" name="stop" value="Stop"/>','<input type="submit" name="Test Set Complete!!!!" value="Test Set Complete!!!!"/>', $check);
     fwrite($file, $str);
