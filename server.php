@@ -36,7 +36,7 @@ while ( true )
     $check = stream_get_contents($file);
     $str = str_replace('<input type="submit" name="stop" value="Stop"/>','<input type="submit" name="Test Set Complete!!!!" value="Test Set Complete!!!!"/>', $check);
     fwrite($file, $str);
-    header("Location: test_set_select.php");
+    header("Location: index.php");
     }
 
 		break;
