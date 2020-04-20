@@ -200,18 +200,25 @@ test_set_php_end=''' </center>
 test_set_php.write(test_set_php_base)
 test_set_ls=subprocess.check_output("ls -l Test_Set/ | grep FULL", shell=True)
 test_set_no=test_set_ls.split("\n")
+#print test_set_no
 for test_set in test_set_no:
         if "FULL" in test_set:
             test_set_1=test_set.split(" ")
-            test_set_2=test_set_1[9].split(".xml")
-            func= "function "+test_set_2[0]+"()"+"\n"+"{"+"\n"+"exec('python "+test_set_2[0]+".py');"+"\n"+'echo "test_set.php";\n}\n'
-            test_set_php.write(func)
+	    for test_set_2 in test_set_1:
+		if "FULL" in test_set_2:
+            		test_set_3=test_set_2.split(".xml")
+#	    		print test_set_3[0]
+            		func= "function "+test_set_3[0]+"()"+"\n"+"{"+"\n"+"exec('python "+test_set_3[0]+".py');"+"\n"+'echo "test_set.php";\n}\n'
+            		test_set_php.write(func)
 test_set_php.write(test_set_php_mid)
 for test_set in test_set_no:
         if "FULL" in test_set:
             test_set_1=test_set.split(" ")
-            test_set_2=test_set_1[9].split("_TEST_SET_FULL")
-            test_set_php.write('''<button><a href='<?php '''+test_set_2[0]+'''_TEST_SET_FULL(); ?>'''+"'</a><h4>"+test_set_2[0]+"</h4></button>\n")
+	    for test_set_2 in test_set_1:
+		if "FULL" in test_set_2:
+            		test_set_3=test_set_2.split("_TEST_SET_FULL")
+			print test_set_3
+            		test_set_php.write('''<button><a href='<?php '''+test_set_3[0]+'''_TEST_SET_FULL(); ?>'''+"'</a><h4>"+test_set_3[0]+"</h4></button>\n")
 #            if i%3==0:
 #                test_set_php.write("<br><br>")
 test_set_php.write(test_set_php_end)
