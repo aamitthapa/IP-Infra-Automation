@@ -10,7 +10,8 @@ test_set_full=open('Test_Set/CGNAT_CONSUMER_TEST_SET_FULL.xml', "r")
 test_set_select=open('test_set_select', "r")
 test_set_xml=open('test_set.xml', "w")
 f=open('test_set_complete.php', "w")
-f1=open("index_base.php", "r")
+f1=open("index_base1.php", "r")
+f1_2=open("index_base3.php", "r")
 f2=open("index_mid.php", "r")
 f3=open("index_end.php", "r")
 test_set_xml.write('''<?xml version="1.0"?>
@@ -31,7 +32,7 @@ root = tree.getroot()
 
 for lines in f1:
 	f.write(lines)
-for lines in f2:
+for lines in f1_2:
 	f.write(lines)
 f.write("<center><h3><label>Test Set Execution Completed</label></h3></center>")
 f.write('<form action="load_test_set.php" method="post" class="container">\n')
