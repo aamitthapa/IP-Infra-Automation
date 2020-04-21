@@ -47,8 +47,7 @@ f.write('''
 </div>
 <div class="container">
 <div class="jumbotron">
-<center><h3><label>Test Logs</label></h3></center>
-<div style="overflow: scroll; height:400px;" id="response"></div>''')
+<center><h3><label>Test Logs</label></h3></center>''')
 for lines in f3:
 	f.write(lines)
 f.close()
