@@ -44,7 +44,7 @@ for test_case in root.findall('test_case'):
         test_case=test_case.attrib.get('name')
         f.write('''<label>'''+ test_case+'''</label><br>\n''')
 f.write('''
-<input type="submit" name="Download Logs" value="Stop"/>
+<input type="submit" name="Download Logs" value="Download Logs"/>
 </form>
 </div>
 </div>
