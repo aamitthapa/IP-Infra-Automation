@@ -34,6 +34,9 @@ for lines in f1:
 	f.write(lines)
 for lines in f1_2:
 	f.write(lines)
+
+for lines in f2:
+    f.write(lines)
 f.write("<center><h3><label>Test Set Execution Completed</label></h3></center>")
 f.write('<form action="load_test_set.php" method="post" class="container">\n')
 
