@@ -9,10 +9,13 @@ import socket
 tree = ET.parse('Test_Set/CGNAT_CONSUMER_TEST_SET_FULL.xml')
 root = tree.getroot()
 f=open("test_set.php", "w")
-f1=open("index_base.php", "r")
+f1=open("index_base1.php", "r")
+f1_2=open("index_base3.php", "r")
 f2=open("index_mid.php", "r")
 f3=open("index_end.php", "r")
 for lines in f1:
+	f.write(lines)
+for lines in f1_2:
 	f.write(lines)
 f.write('''
 if(isset($_POST['run']))//to run PHP script on run
