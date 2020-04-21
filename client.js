@@ -10,7 +10,7 @@ function getContent( timestamp )
                 document.getElementById("response").innerHTML = obj.content.toString();
                 if (check2 !== -1) {
                 //      document.getElementById("complete").innerHTML = "Test Set Completed";
-                        window.location = "test_set_complete.php"; }
+                        window.location = "index.php"; }
                 getContent( obj.timestamp );
         });
 }
