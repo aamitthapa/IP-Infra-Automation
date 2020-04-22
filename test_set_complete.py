@@ -60,4 +60,4 @@ timestr = time.strftime("%Y%m%d-%H%M%S")
 os.system("mkdir Test_Result/Test_Log_"+timestr)
 for lines in f:
     lines1=lines.rstrip()
-    os.system("cp -rf "+lines1+"/"+" "+"Test_Result/Test_Log_"+timestr+"/")
+    os.system("cp -rf Test_Result/"+lines1+"/"+" "+"Test_Result/Test_Log_"+timestr+"/")
