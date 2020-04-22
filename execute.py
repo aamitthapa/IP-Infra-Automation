@@ -19,7 +19,7 @@ for need_automated_traffic in root.findall('need_automated_traffic'):
 for test_name in root.findall('test_name'):
 	test_name=test_name.attrib.get('name')
 os.mkdir(test_name+"_"+timestr)
-os.system("echo "+ $(test_name)+"_"+ $(timestr)+" "+ ">> test_executed.txt")
+os.system("echo "+ test_name+"_"+ timestr+" "+ ">> test_executed.txt")
 def createthread(i):
 #	try:
 
