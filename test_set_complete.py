@@ -48,9 +48,7 @@ f.write('''
 </form>
 </div>
 </div>
-<div class="container">
-<div class="jumbotron">
-<center><h3><label>Test Logs</label></h3></center>''')
+''')
 for lines in f3:
 	f.write(lines)
 f.close()
