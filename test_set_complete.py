@@ -37,9 +37,9 @@ for lines in f1_2:
 
 for lines in f2:
     f.write(lines)
+timestr = time.strftime("%Y%m%d-%H%M%S")
 f.write("<center><h3><label>Test Set Execution Completed</label></h3></center>")
-f.write('<form action="load_test_set.php" method="post" class="container">\n')
-
+f.write('<form action="'+'Test_Result/Test_Log_'+timestr+'.tgz" '+'method="post" class="container">\n')
 for test_case in root.findall('test_case'):
         test_case=test_case.attrib.get('name')
         f.write('''<label>'''+ test_case+'''</label><br>\n''')
@@ -56,8 +56,8 @@ f1.close()
 f2.close()
 f3.close()
 f=open("test_executed.txt", "r")
-timestr = time.strftime("%Y%m%d-%H%M%S")
 os.system("mkdir Test_Result/Test_Log_"+timestr)
 for lines in f:
     lines1=lines.rstrip()
     os.system("cp -rf Test_Result/"+lines1+"/"+" "+"Test_Result/Test_Log_"+timestr+"/")
+    os.system("tar -czf Test_Result/Test_Log_"+timestr+".tgz "+"Test_Result/Test_Log_"+timestr)
