@@ -19,6 +19,8 @@ ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 username="at171y"
 password="!qaz2wsx"
 #os.system('rm Test_Result/test_log')
+test_executed=open("test_executed.txt", "w")
+test_executed.close()
 test_log=open("Test_Result/test_log", "w")
 test_log.close()
 for need_automated_traffic in root.findall('need_automated_traffic'):
