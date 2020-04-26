@@ -36,6 +36,10 @@ function TA_OAM_FW()
 {
 exec('python /var/www/html/test.py');
 }
+function CAPTURE_MCM()
+{
+exec('python /var/www/html/test.py');
+}
 ?>
 
 
@@ -99,8 +103,7 @@ exec('python /var/www/html/test.py');
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Packet Capture <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href='<?php TA_CGNAT_CONSUMER(); ?>'>CGNAT-CONSUMER</a></li>
-              <li><a href='<?php TA_CGNAT_RESELLER(); ?>'>CGNAT-RESELLER</a></li>
+              <li><a href='<?php CAPTURE_MCM(); ?>'>MCM</a></li>
               <li><a href='<?php TA_NGINX_LB(); ?>'>NGINX-LB</a></li>
               <li><a href='<?php TA_OAM_FW(); ?>'>OAM-FW</a></li>
           </ul>
