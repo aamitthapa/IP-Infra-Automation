@@ -238,7 +238,7 @@ def execute_command():
 			output_file3=output_file2[i].split()
 			print(output_file3)
 			print(output_file3[8])
-			sftp.get(output_file3[8], BASE_DIR2+"\\"+output_file3[8][45:])
+			sftp.get(output_file3[8], BASE_DIR2+"/"+output_file3[8][45:])
 		print("done")
 		time.sleep(5)
 #		transport=paramiko.Transport((nodeip.rstrip(), 2222))
