@@ -44,7 +44,7 @@ if(isset($_POST['run']))//to run PHP script on run
      {
     $fp=fopen('capture_packet','w');
     fwrite($fp, $_POST["IMSI"]);
-    fwrite($fp, $_POST["MCM IP"]);
+    fwrite($fp, $_POST["MCM-IP"]);
     fwrite($fp, $_POST["DURATION"]);
     fwrite($fp, $_POST["GTAC-ID"]);
     fwrite($fp, $_POST["GTAC-PW"]);
@@ -195,7 +195,7 @@ if(isset($_POST['run']))//to run PHP script on run
 <center><h3><label>Enter Details to start Packet Capture</label></h3></center>
 <form action="" method="post" class="container">
 <label>IMSI:</label><input type="text" name= "IMSI" ><br>
-<label>MCM IP:</label><input type="text" name= "MCM IP" ><br>
+<label>MCM IP:</label><input type="text" name= "MCM-IP" ><br>
 <label>DURATION:</label><input type="text" name= "DURATION" ><br>
 <label>GTAC-ID:</label><input type="text" name= "GTAC-ID" ><br>
 <label>GTAC-PW:</label><input type="password" name= "GTAC-PW" ><br>
