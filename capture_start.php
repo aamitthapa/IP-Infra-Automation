@@ -196,11 +196,11 @@ exec('python /var/www/html/test.py');
 
 <center><h3><label>Enter Details to start Packet Capture</label></h3></center>
 <form action="" method="post" class="container">
-<input type="text" name= "IMSI" value="IMSI"><label>IMSI</label><br>
-<input type="text" name= "MCM IP" value="MCM IP"><label>MCM IP</label><br>
-<input type="text" name= "DURATION" value="DURATION"><label>DURATION</label><br>
-<input type="text" name= "GTAC-ID" value="GTAC-ID"><label>GTAC-ID</label><br>
-<input type="text" name= "GTAC-PW" value="GTAC-PW"><label>GTAC-PW</label><br>
+<label>IMSI</label><input type="text" name= "IMSI" ><br>
+<label>MCM IP</label><input type="text" name= "MCM IP" ><br>
+<label>DURATION</label><input type="text" name= "DURATION" ><br>
+<label>GTAC-ID</label><input type="text" name= "GTAC-ID" ><br>
+<label>GTAC-PW</label><input type="text" name= "GTAC-PW" ><br>
 <input type="submit" name="run" value="Run"/>
 </form>
   </div>
