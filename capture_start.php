@@ -40,18 +40,16 @@ function CAPTURE_MCM()
 {
 exec('python /var/www/html/test.py');
 }
-#if(isset($_POST['run']))//to run PHP script on run
-#     {
-#    $fp=fopen('capture_packet','w');
-#    fwrite($fp, $_POST["IMSI"]);
-#    fwrite($fp, $_POST["MCM IP"]);
-#    fwrite($fp, $_POST["DURATION"]);
-#    fwrite($fp, $_POST["GTAC-ID"]);
-#    fwrite($fp, $_POST["GTAC-PW"]);
-#	  fclose($fp);
-#      }
-
-#}
+if(isset($_POST['run']))//to run PHP script on run
+     {
+    $fp=fopen('capture_packet','w');
+    fwrite($fp, $_POST["IMSI"]);
+    fwrite($fp, $_POST["MCM IP"]);
+    fwrite($fp, $_POST["DURATION"]);
+    fwrite($fp, $_POST["GTAC-ID"]);
+    fwrite($fp, $_POST["GTAC-PW"]);
+	  fclose($fp);
+      }
 ?>
 
 
