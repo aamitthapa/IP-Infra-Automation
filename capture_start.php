@@ -44,9 +44,13 @@ if(isset($_POST['run']))//to run PHP script on run
      {
     $fp=fopen('capture_packet','w');
     fwrite($fp, $_POST["IMSI"]);
+    fwrite($fp, "\n");
     fwrite($fp, $_POST["MCM-IP"]);
+    fwrite($fp, "\n");
     fwrite($fp, $_POST["DURATION"]);
+    fwrite($fp, "\n");
     fwrite($fp, $_POST["GTAC-ID"]);
+    fwrite($fp, "\n");
     fwrite($fp, $_POST["GTAC-PW"]);
 	  fclose($fp);
       }
