@@ -200,7 +200,7 @@ exec('python /var/www/html/test.py');
 <label>MCM IP:</label><input type="text" name= "MCM IP" ><br>
 <label>DURATION:</label><input type="text" name= "DURATION" ><br>
 <label>GTAC-ID:</label><input type="text" name= "GTAC-ID" ><br>
-<label>GTAC-PW:</label><input type="text" name= "GTAC-PW" ><br>
+<label>GTAC-PW:</label><input type="password" name= "GTAC-PW" ><br>
 <input type="submit" name="run" value="Run"/>
 </form>
   </div>
