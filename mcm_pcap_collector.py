@@ -218,7 +218,7 @@ def execute_command():
 		print("Copying File")
 		ssh_2222 = paramiko.SSHClient()
 		ssh_2222.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-		ssh_2222.connect(nodeip.rstrip(), port="2222", username=GTAC_username, password=GTAC_password)
+		ssh_2222.connect(nodeip.rstrip(), port=2222, username=GTAC_username, password=GTAC_password)
 		print("SFTP on 2222 connected")
 		print("ls -l /boot/partitions/ext-storage/varlog/eventlog/AMIT_" + timestr+"*")
 		stdin, stdout, stderr = ssh_2222.exec_command("ls -l /boot/partitions/ext-storage/varlog/eventlog/AMIT_" + timestr+"*")
