@@ -13,24 +13,19 @@ ssh_2222.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 file_node = open('nodesip.txt', 'r')
 num_nodes = sum(1 for line in open('nodesip.txt'))
 timestr = time.strftime("%Y%m%d-%H%M%S")
-GTAC_username = ""
-GTAC_password = ""
+
 nodeip=""
 check_first=0
 failed_node = ""
 start = 'hostname' ###used to find the hostname of the node with split in string####
 end="."
-nodeip=file_node.readline()
 imsi=file_node.readline()
+nodeip=file_node.readline()
 seconds_str=file_node.readline().rstrip()
 seconds=int(seconds_str)
+GTAC_username =file_node.readline()
+GTAC_password =file_node.readline()
 #nodeip_2222=file_node.readline()
-def take_input():
-	global GTAC_username
-	global GTAC_password
-	GTAC_username=input('Enter your GTAC username:')
-	GTAC_password=getpass.getpass('Enter your GTAC password:')
-
 def patch_crypto_be_discovery():
 
     """
@@ -57,7 +52,6 @@ def main():
 	file_node = open('nodesip.txt', 'r')
 	global check_first
 	global failed_node
-	take_input()
 	patch_crypto_be_discovery()
 	global nodeip
 
@@ -132,17 +126,6 @@ def take_logs():
 	output_file="".join(output)
 	file_logs.write(str(output_file))
 	file_logs.write("\n\n\n")
-
-
-
-
-
-#	stdin, stdout, stderr = ssh.exec_command("show subscriber summary imsi " + imsi)
-#	output = stdout.readlines()
-#	output_file="".join(output)
-#	file_output.write(str(output_file))
-
-
 
 def execute_command():
 	global file_node
