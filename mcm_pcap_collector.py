@@ -19,12 +19,12 @@ check_first=0
 failed_node = ""
 start = 'hostname' ###used to find the hostname of the node with split in string####
 end="."
-imsi=file_node.readline()
-nodeip=file_node.readline()
+imsi=file_node.readline().rstrip()
+nodeip=file_node.readline().rstrip()
 seconds_str=file_node.readline().rstrip()
 seconds=int(seconds_str)
-GTAC_username =file_node.readline()
-GTAC_password =file_node.readline()
+GTAC_username =file_node.readline().rstrip()
+GTAC_password =file_node.readline().rstrip()
 #nodeip_2222=file_node.readline()
 def patch_crypto_be_discovery():
 
