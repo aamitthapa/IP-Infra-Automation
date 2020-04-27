@@ -214,41 +214,86 @@ def execute_command():
 		time.sleep(seconds+20)
 		print("Taking logs")
 		take_logs()
-		#############SCP files to local directory##########################
-		print("Copying File")
+			#############SCP files to local directory##########################
+		print "Copying File"
+		test_log=open("Test_Result/test_log", "a")
+		test_log.write("Copying File \n")
+		test_log.close()
 		ssh_2222 = paramiko.SSHClient()
 		ssh_2222.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 		ssh_2222.connect(nodeip.rstrip(), port=2222, username=GTAC_username, password=GTAC_password)
-		print("SFTP on 2222 connected")
-		print("ls -l /boot/partitions/ext-storage/varlog/eventlog/AMIT_" + timestr+"*")
+		print "SFTP on 2222 connected \nBelow are the PCAPS created"
+		test_log=open("Test_Result/test_log", "a")
+		test_log.write("SFTP on 2222 connected \nBelow are the PCAPS created \n")
+		test_log.close()
 		stdin, stdout, stderr = ssh_2222.exec_command("ls -l /boot/partitions/ext-storage/varlog/eventlog/AMIT_" + timestr+"*")
 		output = stdout.readlines()
 		output_file1="".join(output)
 		output_file2=output_file1.split("\n")
-#		print(output_file2)
+		for items in output_file2:
+			output_file3=items.split()
+			if output_file3 !=[]:
+				print(output_file3[8])
+				test_log=open("Test_Result/test_log", "a")
+				test_log.write(output_file3[8]+"\n")
+				test_log.close()
+		stdin, stdout, stderr = ssh_2222.exec_command("mv /boot/partitions/ext-storage/varlog/eventlog/AMIT_" + timestr+"*"+" "+"~")
+		print "Moving and Merging PCAPS"
+		test_log=open("Test_Result/test_log", "a")
+		test_log.write("Moving and Merging PCAPS \n")
+		test_log.close()
+		time.sleep(2)
+		if merge_pcap=="yes":
+			stdin, stdout, stderr = ssh_2222.exec_command("mergecap -w GI_MERGED_"+timestr+".pcapng"+ " "+"AMIT_"+timestr+"_"+"GI"+"*")
+			stdin, stdout, stderr = ssh_2222.exec_command("mergecap -w GN_MERGED_"+timestr+".pcapng"+ " "+"AMIT_"+timestr+"_"+"SAEGW"+"*")
+
+##########SFTP to copy file###########
 		transport=paramiko.Transport((nodeip.rstrip(), 2222))
-		#transport.start_client()
-#		print("I am here1")
 		transport.connect(username=GTAC_username, password=GTAC_password)
-#		print("I am here2")
 		sftp=paramiko.SFTPClient.from_transport(transport)
-		print("Files below are copied")
-		for i in range(0,4):
-#			print(i)
-			output_file3=output_file2[i].split()
-			print(output_file3)
-			print(output_file3[8])
-			sftp.get(output_file3[8], BASE_DIR2+"/"+output_file3[8][45:])
+		print "Files below are copied"
+		test_log=open("Test_Result/test_log", "a")
+		test_log.write("Files below are copied \n")
+		test_log.close()
+		###########Copying merged pcap################
+		if merge_pcap=="yes":
+			sftp.get("GN_MERGED_"+timestr+".pcapng", BASE_DIR+"/"+test_name+"_"+timestr+"/"+"GN_MERGED_"+timestr+".pcapng")
+			sftp.get("GI_MERGED_"+timestr+".pcapng", BASE_DIR+"/"+test_name+"_"+timestr+"/"+"GI_MERGED_"+timestr+".pcapng")
+			print "GN_MERGED_"+timestr+".pcapng", "\n"+"GI_MERGED_"+timestr+".pcapng"
+			test_log=open("Test_Result/test_log", "a")
+			test_log.write("GN_MERGED_"+timestr+".pcapng"+"\n"+"GI_MERGED_"+timestr+".pcapng"+"\n")
+			test_log.close()
+		############copying unmerged pcap##############
+		for items in output_file2:
+			output_file3=items.split()
+			if output_file3 !=[]:
+				print(output_file3[8].split("/")[6])
+				test_log=open("Test_Result/test_log", "a")
+				test_log.write(output_file3[8].split("/")[6]+"\n")
+				test_log.close()
+				sftp.get(output_file3[8], BASE_DIR+"/"+test_name+"_"+timestr+"/"+output_file3[8][45:])
+		######Delete PCAPs from system###################
+		if delete_pcap=="yes":
+			stdin, stdout, stderr = ssh_2222.exec_command("rm AMIT_"+timestr+"*")
+			stdin, stdout, stderr = ssh_2222.exec_command("rm GI_MERGED_"+timestr+"*")
+			stdin, stdout, stderr = ssh_2222.exec_command("rm GN_MERGED_"+timestr+"*")
+
 		print("done")
+		test_log=open("Test_Result/test_log", "a")
+		test_log.write("done! \n")
+		test_log.close()
 		time.sleep(5)
-#		transport=paramiko.Transport((nodeip.rstrip(), 2222))
-#		transport.connect(username=GTAC_username, password=GTAC_password)
-#		sftp=paramiko.SFTPClient.from_transport(transport)
-#		sftp.get("/var/log/eventlog/test.log", "BASE_DIR/")
 	else:
 		print("Exiting as someone else is running capture")
+		test_log=open("Test_Result/test_log", "a")
+		test_log.write("Exiting as someone else is running capture \n")
+		test_log.close()
+		file_logs = open(BASE_DIR+"/"+test_name+"_"+timestr+"/"+test_name+"_"+timestr+"."+"txt","a")
+		file_logs.write("Could not run test as someone else is running capture")
+		file_logs.close()
 		time.sleep(5)
 		sys.exit()
+
 	#print(output_file1)
 	#file_output.write(str(output_file))
 	#print ("".join(output))
