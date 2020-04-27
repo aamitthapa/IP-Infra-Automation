@@ -42,7 +42,7 @@ exec('python /var/www/html/test.py');
 }
 if(isset($_POST['run']))//to run PHP script on run
      {
-    $fp=fopen('capture_packet','w');
+    $fp=fopen('nodesip.txt','w');
     fwrite($fp, $_POST["IMSI"]);
     fwrite($fp, "\n");
     fwrite($fp, $_POST["MCM-IP"]);
@@ -53,6 +53,7 @@ if(isset($_POST['run']))//to run PHP script on run
     fwrite($fp, "\n");
     fwrite($fp, $_POST["GTAC-PW"]);
 	  fclose($fp);
+    exec('python /var/www/html/IP-Infra-Automation/mcm_pcap_collector.py');
       }
 ?>
 
