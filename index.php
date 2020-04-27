@@ -38,7 +38,7 @@ exec('python /var/www/html/test.py');
 }
 function CAPTURE_MCM()
 {
-exec('python /var/www/html/test.py');
+echo "capture_mcm.php";
 }
 ?>
 
