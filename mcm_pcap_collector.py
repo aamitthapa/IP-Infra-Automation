@@ -274,6 +274,7 @@ def execute_command():
 		stdin, stdout, stderr = ssh_2222.exec_command("rm AMIT_"+timestr+"*")
 		stdin, stdout, stderr = ssh_2222.exec_command("rm GI_MERGED_"+timestr+"*")
 		stdin, stdout, stderr = ssh_2222.exec_command("rm GN_MERGED_"+timestr+"*")
+        os.system("tar -czf packet_capture.tgz packet_capture/")
 
 		print("done")
 #		test_log=open("Test_Result/test_log", "a")
