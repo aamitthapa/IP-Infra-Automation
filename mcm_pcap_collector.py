@@ -220,7 +220,7 @@ def execute_command():
 #        test_log=open("Test_Result/test_log", "a")
 #		test_log.write("Copying File \n")
 #		test_log.close()
-		ssh_2222 = paramiko.SSHClient()
+        ssh_2222 = paramiko.SSHClient()
 		ssh_2222.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 		ssh_2222.connect(nodeip.rstrip(), port=2222, username=GTAC_username, password=GTAC_password)
 		print "SFTP on 2222 connected \nBelow are the PCAPS created"
