@@ -5,7 +5,7 @@ import os
 import sys
 import getpass
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE_DIR2=os.getcwd()
+BASE_DIR=os.getcwd()
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 ssh_2222 = paramiko.SSHClient()
