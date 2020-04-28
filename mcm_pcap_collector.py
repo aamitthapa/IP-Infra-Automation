@@ -294,5 +294,5 @@ def execute_command():
 	#print(output_file1)
 	#file_output.write(str(output_file))
 	#print ("".join(output))
-	file_output.close()
+	#file_output.close()
 main()
