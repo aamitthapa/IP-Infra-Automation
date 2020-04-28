@@ -217,16 +217,16 @@ def execute_command():
 			#############SCP files to local directory##########################
         os.system("rm packet_capture/*")
         print "Copying File"
-		test_log=open("Test_Result/test_log", "a")
-		test_log.write("Copying File \n")
-		test_log.close()
+#        test_log=open("Test_Result/test_log", "a")
+#		test_log.write("Copying File \n")
+#		test_log.close()
 		ssh_2222 = paramiko.SSHClient()
 		ssh_2222.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 		ssh_2222.connect(nodeip.rstrip(), port=2222, username=GTAC_username, password=GTAC_password)
 		print "SFTP on 2222 connected \nBelow are the PCAPS created"
-		test_log=open("Test_Result/test_log", "a")
-		test_log.write("SFTP on 2222 connected \nBelow are the PCAPS created \n")
-		test_log.close()
+#		test_log=open("Test_Result/test_log", "a")
+#		test_log.write("SFTP on 2222 connected \nBelow are the PCAPS created \n")
+#		test_log.close()
 		stdin, stdout, stderr = ssh_2222.exec_command("ls -l /boot/partitions/ext-storage/varlog/eventlog/AMIT_" + timestr+"*")
 		output = stdout.readlines()
 		output_file1="".join(output)
