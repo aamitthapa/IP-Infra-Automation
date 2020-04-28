@@ -54,6 +54,7 @@ if(isset($_POST['run']))//to run PHP script on run
     fwrite($fp, $_POST["GTAC-PW"]);
 	  fclose($fp);
     exec('python /var/www/html/IP-Infra-Automation/mcm_pcap_collector.py');
+    header("Location: packet_capture.tgz");
       }
 ?>
 
