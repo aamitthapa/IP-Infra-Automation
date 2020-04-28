@@ -243,9 +243,8 @@ def execute_command():
 		test_log.write("Moving and Merging PCAPS \n")
 		test_log.close()
 		time.sleep(2)
-		if merge_pcap=="yes":
-			stdin, stdout, stderr = ssh_2222.exec_command("mergecap -w GI_MERGED_"+timestr+".pcapng"+ " "+"AMIT_"+timestr+"_"+"GI"+"*")
-			stdin, stdout, stderr = ssh_2222.exec_command("mergecap -w GN_MERGED_"+timestr+".pcapng"+ " "+"AMIT_"+timestr+"_"+"SAEGW"+"*")
+		stdin, stdout, stderr = ssh_2222.exec_command("mergecap -w GI_MERGED_"+timestr+".pcapng"+ " "+"AMIT_"+timestr+"_"+"GI"+"*")
+		stdin, stdout, stderr = ssh_2222.exec_command("mergecap -w GN_MERGED_"+timestr+".pcapng"+ " "+"AMIT_"+timestr+"_"+"SAEGW"+"*")
 
 ##########SFTP to copy file###########
 		transport=paramiko.Transport((nodeip.rstrip(), 2222))
@@ -256,13 +255,12 @@ def execute_command():
 		test_log.write("Files below are copied \n")
 		test_log.close()
 		###########Copying merged pcap################
-		if merge_pcap=="yes":
-			sftp.get("GN_MERGED_"+timestr+".pcapng", BASE_DIR+"/"+test_name+"_"+timestr+"/"+"GN_MERGED_"+timestr+".pcapng")
-			sftp.get("GI_MERGED_"+timestr+".pcapng", BASE_DIR+"/"+test_name+"_"+timestr+"/"+"GI_MERGED_"+timestr+".pcapng")
-			print "GN_MERGED_"+timestr+".pcapng", "\n"+"GI_MERGED_"+timestr+".pcapng"
-			test_log=open("Test_Result/test_log", "a")
-			test_log.write("GN_MERGED_"+timestr+".pcapng"+"\n"+"GI_MERGED_"+timestr+".pcapng"+"\n")
-			test_log.close()
+		sftp.get("GN_MERGED_"+timestr+".pcapng", BASE_DIR+"/"+test_name+"_"+timestr+"/"+"GN_MERGED_"+timestr+".pcapng")
+		sftp.get("GI_MERGED_"+timestr+".pcapng", BASE_DIR+"/"+test_name+"_"+timestr+"/"+"GI_MERGED_"+timestr+".pcapng")
+		print "GN_MERGED_"+timestr+".pcapng", "\n"+"GI_MERGED_"+timestr+".pcapng"
+		test_log=open("Test_Result/test_log", "a")
+		test_log.write("GN_MERGED_"+timestr+".pcapng"+"\n"+"GI_MERGED_"+timestr+".pcapng"+"\n")
+		test_log.close()
 		############copying unmerged pcap##############
 		for items in output_file2:
 			output_file3=items.split()
@@ -273,10 +271,9 @@ def execute_command():
 				test_log.close()
 				sftp.get(output_file3[8], BASE_DIR+"/"+test_name+"_"+timestr+"/"+output_file3[8][45:])
 		######Delete PCAPs from system###################
-		if delete_pcap=="yes":
-			stdin, stdout, stderr = ssh_2222.exec_command("rm AMIT_"+timestr+"*")
-			stdin, stdout, stderr = ssh_2222.exec_command("rm GI_MERGED_"+timestr+"*")
-			stdin, stdout, stderr = ssh_2222.exec_command("rm GN_MERGED_"+timestr+"*")
+		stdin, stdout, stderr = ssh_2222.exec_command("rm AMIT_"+timestr+"*")
+		stdin, stdout, stderr = ssh_2222.exec_command("rm GI_MERGED_"+timestr+"*")
+		stdin, stdout, stderr = ssh_2222.exec_command("rm GN_MERGED_"+timestr+"*")
 
 		print("done")
 		test_log=open("Test_Result/test_log", "a")
