@@ -215,7 +215,8 @@ def execute_command():
 		print("Taking logs")
 		take_logs()
 			#############SCP files to local directory##########################
-		print "Copying File"
+        os.system("rm packet_capture/*")
+        print "Copying File"
 		test_log=open("Test_Result/test_log", "a")
 		test_log.write("Copying File \n")
 		test_log.close()
