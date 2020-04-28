@@ -63,7 +63,7 @@ def main():
 		print("Authentication failure")
 		main()
 def take_logs():
-	file_logs = open("file_logs"+"_"+timestr+"."+"txt","w")
+	file_logs = open("packet_capture_logs"+"_"+timestr+"."+"txt","w")
 	file_logs.write("show subscriber summary imsi " + imsi+"\n")
 	stdin, stdout, stderr = ssh.exec_command("show subscriber summary imsi " + imsi)
 	output = stdout.readlines()
@@ -135,7 +135,7 @@ def execute_command():
 	global start
 	global end
 	global pdnsession
-	file_output = open("OUTPUT"+"_"+timestr+"."+"txt","w")
+#	file_output = open("OUTPUT"+"_"+timestr+"."+"txt","w")
 	print("Connected to ", nodeip.rstrip())
 	ssh.connect(nodeip.rstrip(), port=22, username=GTAC_username, password=GTAC_password)
 
