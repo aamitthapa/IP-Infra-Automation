@@ -187,8 +187,7 @@ def execute_command():
 	output_file1="".join(output)
 	sgi_capture_2=output_file1.split()
 	sgi_capture_2_final=sgi_capture_2[4]
-
-    if saegw_capture_1_final=="disabled" and saegw_capture_2_final== "disabled" and sgi_capture_1_final=="disabled" and sgi_capture_2_final== "disabled":
+	if saegw_capture_1_final=="disabled" and saegw_capture_2_final== "disabled" and sgi_capture_1_final=="disabled" and sgi_capture_2_final== "disabled":
 		######Put caputure command here######
 		print("Current capture status is disabled on slot ", slot_final)
 		print("Starting Capture")
@@ -196,65 +195,62 @@ def execute_command():
 		print("network-context SGI-CON ip-interface GI_"+slot_final+"_2_5 "+"startcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_GI_"+slot_final+"_2_5")
 		print("network-context SAEGW ip-interface SAEGW_"+slot_final+"_1_5 "+"startcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_SAEGW_"+slot_final+"_1_5")
 		print("network-context SAEGW ip-interface SAEGW_"+slot_final+"_2_5 "+"startcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_SAEGW_"+slot_final+"_2_5")
-
 		ssh.exec_command("network-context SGI-CON ip-interface GI_"+slot_final+"_1_5 "+"startcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_GI_"+slot_final+"_1_5")
 		ssh.exec_command("network-context SGI-CON ip-interface GI_"+slot_final+"_2_5 "+"startcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_GI_"+slot_final+"_2_5")
 		ssh.exec_command("network-context SAEGW ip-interface SAEGW_"+slot_final+"_1_5 "+"startcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_SAEGW_"+slot_final+"_1_5")
 		ssh.exec_command("network-context SAEGW ip-interface SAEGW_"+slot_final+"_2_5 "+"startcapture duration "+seconds_str+" count 100000000 file-name "+"AMIT_"+timestr+"_SAEGW_"+slot_final+"_2_5")
 		print("Wait for ", int(seconds/60)+1, " Minutes")
-#		ssh.close()
+		#ssh.close()
 		time.sleep(seconds+20)
-        print("Taking logs")
-        take_logs()
-			#############SCP files to local directory##########################
-        os.system("rm packet_capture/*")
-        print "Copying File"
-        ssh_2222 = paramiko.SSHClient()
-        ssh_2222.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        ssh_2222.connect(nodeip.rstrip(), port=2222, username=GTAC_username, password=GTAC_password)
-        print "SFTP on 2222 connected \nBelow are the PCAPS created"
-        stdin, stdout, stderr = ssh_2222.exec_command("ls -l /boot/partitions/ext-storage/varlog/eventlog/AMIT_" + timestr+"*")
-        output = stdout.readlines()
-        output_file1="".join(output)
-        output_file2=output_file1.split("\n")
-        for items in output_file2:
-            output_file3=items.split()
-            if output_file3 !=[]:
-                print(output_file3[8])
-        stdin, stdout, stderr = ssh_2222.exec_command("mv /boot/partitions/ext-storage/varlog/eventlog/AMIT_" + timestr+"*"+" "+"~")
-        print "Moving and Merging PCAPS"
-        time.sleep(2)
-        stdin, stdout, stderr = ssh_2222.exec_command("mergecap -w GI_MERGED_"+timestr+".pcapng"+ " "+"AMIT_"+timestr+"_"+"GI"+"*")
-        stdin, stdout, stderr = ssh_2222.exec_command("mergecap -w GN_MERGED_"+timestr+".pcapng"+ " "+"AMIT_"+timestr+"_"+"SAEGW"+"*")
+		print("Taking logs")
+		take_logs()
+		#############SCP files to local directory##########################
+		os.system("rm packet_capture/*")
+		print "Copying File"
+		ssh_2222 = paramiko.SSHClient()
+		ssh_2222.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+		ssh_2222.connect(nodeip.rstrip(), port=2222, username=GTAC_username, password=GTAC_password)
+		print "SFTP on 2222 connected \nBelow are the PCAPS created"
+		stdin, stdout, stderr = ssh_2222.exec_command("ls -l /boot/partitions/ext-storage/varlog/eventlog/AMIT_" + timestr+"*")
+		output = stdout.readlines()
+		output_file1="".join(output)
+		output_file2=output_file1.split("\n")
+		for items in output_file2:
+			output_file3=items.split()
+			if output_file3 !=[]:
+				print(output_file3[8])
+		stdin, stdout, stderr = ssh_2222.exec_command("mv /boot/partitions/ext-storage/varlog/eventlog/AMIT_" + timestr+"*"+" "+"~")
+		print "Moving and Merging PCAPS"
+		time.sleep(2)
+		stdin, stdout, stderr = ssh_2222.exec_command("mergecap -w GI_MERGED_"+timestr+".pcapng"+ " "+"AMIT_"+timestr+"_"+"GI"+"*")
+		stdin, stdout, stderr = ssh_2222.exec_command("mergecap -w GN_MERGED_"+timestr+".pcapng"+ " "+"AMIT_"+timestr+"_"+"SAEGW"+"*")
 
 ##########SFTP to copy file###########
-        transport=paramiko.Transport((nodeip.rstrip(), 2222))
-        transport.connect(username=GTAC_username, password=GTAC_password)
-        sftp=paramiko.SFTPClient.from_transport(transport)
-        print "Files below are copied"
+		transport=paramiko.Transport((nodeip.rstrip(), 2222))
+		transport.connect(username=GTAC_username, password=GTAC_password)
+		sftp=paramiko.SFTPClient.from_transport(transport)
+		print "Files below are copied"
 
 		###########Copying merged pcap################
-        sftp.get("GN_MERGED_"+timestr+".pcapng", BASE_DIR+"/"+"packet_capture"+"/"+"GN_MERGED_"+timestr+".pcapng")
-        sftp.get("GI_MERGED_"+timestr+".pcapng", BASE_DIR+"/"+"packet_capture"+"/"+"GI_MERGED_"+timestr+".pcapng")
-        print "GN_MERGED_"+timestr+".pcapng", "\n"+"GI_MERGED_"+timestr+".pcapng"
+		sftp.get("GN_MERGED_"+timestr+".pcapng", BASE_DIR+"/"+"packet_capture"+"/"+"GN_MERGED_"+timestr+".pcapng")
+		sftp.get("GI_MERGED_"+timestr+".pcapng", BASE_DIR+"/"+"packet_capture"+"/"+"GI_MERGED_"+timestr+".pcapng")
+		print "GN_MERGED_"+timestr+".pcapng", "\n"+"GI_MERGED_"+timestr+".pcapng"
 
 		############copying unmerged pcap##############
-        for items in output_file2:
-            output_file3=items.split()
-            if output_file3 !=[]:
-                print(output_file3[8].split("/")[6])
-                sftp.get(output_file3[8], BASE_DIR+"/"+"packet_capture"+"/"+output_file3[8][45:])
+		for items in output_file2:
+			output_file3=items.split()
+			if output_file3 !=[]:
+				print(output_file3[8].split("/")[6])
+				sftp.get(output_file3[8], BASE_DIR+"/"+"packet_capture"+"/"+output_file3[8][45:])
 		######Delete PCAPs from system###################
-        stdin, stdout, stderr = ssh_2222.exec_command("rm AMIT_"+timestr+"*")
-        stdin, stdout, stderr = ssh_2222.exec_command("rm GI_MERGED_"+timestr+"*")
-        stdin, stdout, stderr = ssh_2222.exec_command("rm GN_MERGED_"+timestr+"*")
-        os.system("tar -czf packet_capture.tgz packet_capture/")
-
-        print("done")
-        time.sleep(5)
-    else:
-        print("Exiting as someone else is running capture")
-        time.sleep(5)
-        sys.exit()
-
+		stdin, stdout, stderr = ssh_2222.exec_command("rm AMIT_"+timestr+"*")
+		stdin, stdout, stderr = ssh_2222.exec_command("rm GI_MERGED_"+timestr+"*")
+		stdin, stdout, stderr = ssh_2222.exec_command("rm GN_MERGED_"+timestr+"*")
+		os.system("tar -czf packet_capture.tgz packet_capture/")
+		print("done")
+		time.sleep(5)
+	else:
+		print("Exiting as someone else is running capture")
+		time.sleep(5)
+		sys.exit()
 main()
