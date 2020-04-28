@@ -188,14 +188,6 @@ def execute_command():
 	sgi_capture_2=output_file1.split()
 	sgi_capture_2_final=sgi_capture_2[4]
 
-#	stdin, stdout, stderr = ssh.exec_command("show subscriber pdn-session "+ pdnsession[2].rstrip()+" " +"| include connec")
-#	output = stdout.readlines()
-#	output_file1="".join(output)
-#	print(output_file1)
-#	file_output.write(str(output_file1))
-
-#	print(sgi_capture_1_final, sgi_capture_2_final, saegw_capture_1_final, saegw_capture_2_final)
-	############If all the capture status on required slot are disabled.. start capture#######################
 	if saegw_capture_1_final=="disabled" and saegw_capture_2_final== "disabled" and sgi_capture_1_final=="disabled" and sgi_capture_2_final== "disabled":
 		######Put caputure command here######
 		print("Current capture status is disabled on slot ", slot_final)
@@ -212,8 +204,8 @@ def execute_command():
 		print("Wait for ", int(seconds/60)+1, " Minutes")
 #		ssh.close()
 		time.sleep(seconds+20)
-		print("Taking logs")
-		take_logs()
+        print("Taking logs")
+        take_logs()
 			#############SCP files to local directory##########################
         os.system("rm packet_capture/*")
         print "Copying File"
