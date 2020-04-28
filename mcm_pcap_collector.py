@@ -255,8 +255,8 @@ def execute_command():
 		test_log.write("Files below are copied \n")
 		test_log.close()
 		###########Copying merged pcap################
-		sftp.get("GN_MERGED_"+timestr+".pcapng", BASE_DIR+"/"+"packet_capture"+"_"+timestr+"/"+"GN_MERGED_"+timestr+".pcapng")
-		sftp.get("GI_MERGED_"+timestr+".pcapng", BASE_DIR+"/"+"packet_capture"+"_"+timestr+"/"+"GI_MERGED_"+timestr+".pcapng")
+		sftp.get("GN_MERGED_"+timestr+".pcapng", BASE_DIR+"/"+"packet_capture"+"/"+"GN_MERGED_"+timestr+".pcapng")
+		sftp.get("GI_MERGED_"+timestr+".pcapng", BASE_DIR+"/"+"packet_capture"+"/"+"GI_MERGED_"+timestr+".pcapng")
 		print "GN_MERGED_"+timestr+".pcapng", "\n"+"GI_MERGED_"+timestr+".pcapng"
 		test_log=open("Test_Result/test_log", "a")
 		test_log.write("GN_MERGED_"+timestr+".pcapng"+"\n"+"GI_MERGED_"+timestr+".pcapng"+"\n")
